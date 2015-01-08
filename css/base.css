@@ -62,38 +62,24 @@ font-weight: normal;
 font-style: normal;
 }
 
-.entypo {
-font-family: 'EntypoRegular';
-font-size: 3.1em;
-font-weight: normal;
-line-height: 0.6em;
-}
-
-.entypo-social {
-font-family: 'EntypoSocialRegular';
-font-size: 2.7em;
-font-weight: normal;
-line-height: 1.4;
-}
-
 @font-face {
 font-family: 'FreightText';
 src: url("/assets/fonts/HarrietText-Light.otf");
 }
 @font-face {
 font-family: 'FreightText';
-src: url("/assets/fonts/HarrietText-Medium.ttf");
+src: url("/assets/fonts/HarrietText-Bold.otf");
 font-weight: bold;
 }
 @font-face {
 font-family: 'FreightText';
-src: url("/assets/fonts/FreightText-BoldItalic.ttf");
+src: url("/assets/fonts/HarrietText-BoldItalic.otf");
 font-style: italic;
 font-weight: bold;
 }
 @font-face {
 font-family: 'FreightText';
-src: url("/assets/fonts/HarrietText-MediumItalic.otf");
+src: url("/assets/fonts/HarrietText-Italic.otf");
 font-style: italic;
 }
 
@@ -114,7 +100,7 @@ word-wrap: break-word;
 body {
 font-size: 18px;
 line-height: 1.6;
-color: #efefef;
+color: #cecece;
 margin: 0 auto;
 background-color: #282931;
 }
@@ -250,7 +236,7 @@ max-width: 25rem;
 footer, footer a {
 font-family: "proxima",Helvetica,Verdana,sans-serif;
 margin-bottom: 1rem!important;
-color: #d0d0d0;
+color: #666;
 font-weight: normal;
 text-align: center;
 font-size: .8rem;
@@ -368,7 +354,6 @@ font-weight: normal!important;
 }
 
 .aside {
-background-color: #fefefe;
 font-weight: normal;
 font-family: "proxima","Georgia",Georgia,Lucida,sans-serif;
 font-size: 1.1em !important;
@@ -436,7 +421,7 @@ text-decoration: none!important;
 }
 
 nav li.current a {
-color: #111;
+color: #fff;
 font-weight: bold;
 }
 
@@ -456,14 +441,15 @@ text-decoration: underline!important;
 }
 
 h1,h2,h3,h4 {
-font-family: "proxima","Georgia",Georgia,Verdana,Helvetica,sans-serif;
-font-weight: bold!important;
+font-family: "FreightText","Georgia",Georgia,Verdana,Helvetica,sans-serif;
+font-weight: normal !important;
 color: #f5f5f5;
 margin: 0;
+letter-spacing: 0.01em;
 }
 
 h1 {
-font-size: 1.5rem;
+font-size: 1.9rem;
 line-height: 1.2em;
 margin-bottom: .6rem;
 margin-top: 0.5rem;
@@ -739,11 +725,6 @@ margin-bottom: 0.5rem;
 width: 40%!important;
 margin-left: 30%!important;
 border-radius: 2px;
-}
-
-ul,ol {
-margin: 1rem 1.4rem 1rem 1.9rem;
-padding: 0;
 }
 
 li {
@@ -1507,7 +1488,7 @@ width: 48%;
 }
 
 ul.rig.columns-3 li {
-width: 33%;
+width: 32%;
 }
 
 ul.rig.columns-4 li {
