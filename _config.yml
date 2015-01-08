@@ -1,0 +1,22 @@
+name: Hardik Pandya
+description: Front-end and Web-app Developer
+
+pygments: true
+permalink: blog/:title
+markdown: rdiscount
+
+highlighter: pygments
+
+safe:         false
+include:      [".htaccess"]
+exclude:      []
+keep_files:   [".git", ".svn"]
+encoding:     "utf-8"
+markdown_ext: "markdown,mkdown,mkdn,mkd,md"
+
+exclude: ["images-src", "js-src", "css-src", "node_modules", "package.json", "gulpfile.js", "Gemfile", "Gemfile.lock"]
+
+rdiscount:
+  extensions:
+    - smart
+    - generate_toc
