@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Books
-books: true
+title: Collections
+collections: true
 ---
 
 ## As they say, your bookshelf says a lot about you

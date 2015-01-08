@@ -4,20 +4,11 @@
     <li>
       <a href="/">Home</a>
     </li>
-    <li {% if page.blog %}class="current"{% endif %}>
-      <a href="{{ site.url }}/blog/">Blog</a>
+    <li {% if page.collections %}class="current"{% endif %}>
+      <a href="{{ site.url }}/collections/"></a>
     </li>
-    <li {% if page.projects %}class="current"{% endif %}>
-      <a href="{{ site.url }}/code/">Projects</a>
+    <li {% if page.contact %}class="current"{% endif %}>
+      <a href="{{ site.url }}/contact/">Contact</a>
     </li>
-    <!--<li {% if page.inspiration %}class="current"{% endif %}>
-      <a href="{{ site.url }}/inspiration/"><span id="" class="entypo quote"></span></a>
-    </li>-->
-    <li {% if page.tools %}class="current"{% endif %}>
-      <a href="{{ site.url }}/tools/">Tools</a>
-    </li>
-    <!--<li {% if page.books %}class="current"{% endif %}>
-      <a href="{{ site.url }}/books/"><span id="" class="entypo open-book"></span></a>
-    </li>-->
   </ul>
 </nav></div>
