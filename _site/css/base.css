@@ -78,11 +78,11 @@ line-height: 1.4;
 
 @font-face {
 font-family: 'FreightText';
-src: url("/assets/fonts/FreightText-Book.ttf");
+src: url("/assets/fonts/HarrietText-Light.otf");
 }
 @font-face {
 font-family: 'FreightText';
-src: url("/assets/fonts/FreightText-Bold.ttf");
+src: url("/assets/fonts/HarrietText-Medium.ttf");
 font-weight: bold;
 }
 @font-face {
@@ -93,7 +93,7 @@ font-weight: bold;
 }
 @font-face {
 font-family: 'FreightText';
-src: url("/assets/fonts/FreightText-BookItalic.ttf");
+src: url("/assets/fonts/HarrietText-MediumItalic.otf");
 font-style: italic;
 }
 
@@ -458,7 +458,7 @@ text-decoration: underline!important;
 h1,h2,h3,h4 {
 font-family: "proxima","Georgia",Georgia,Verdana,Helvetica,sans-serif;
 font-weight: bold!important;
-color: #222;
+color: #f5f5f5;
 margin: 0;
 }
 
@@ -480,11 +480,11 @@ margin-bottom: 2.5vh!important;
 }
 
 .main-text {
-font-family: "proxima","Georgia",Georgia,Verdana,sans-serif;
+font-family: "FreightText","Georgia",Georgia,Verdana,sans-serif;
 font-size: 1.3rem;
 text-transform: none!important;
 color: #fff;
-font-weight: bold !important;
+font-weight: Bold !important;
 width: 100%;
 margin-bottom: 1%!important;
 margin-top: 1%!important;
@@ -513,7 +513,7 @@ text-align: center;
 }
 
 .main-text-subtitle {
-font-family: "proxima",Georgia,Verdana,sans-serif;
+font-family: "FreightText",Georgia,Verdana,sans-serif;
 font-size: 1.1rem;
 color: #eee !important;
 text-transform: none!important;
