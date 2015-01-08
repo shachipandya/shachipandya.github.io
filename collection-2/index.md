@@ -197,3 +197,14 @@ collectionTwo: true
     </figure>
   </li>
 </ul>
+
+<ul class="rig columns-2">
+<li>
+<figure>
+<a href="{{ site.url }}/images/chaniya-choli/41.jpg"
+class="fresco" data-fresco-group="one"
+data-fresco-caption=""><img src="{{ site.url }}/images/chaniya-choli/41.jpg"></a>
+<figcaption></figcaption>
+</figure>
+</li>
+</ul>
