@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <!-- Basic Page Needs -->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png">
+<link rel="icon" type="image/png" href="/favicon-196x196.png" sizes="196x196">
+<link rel="icon" type="image/png" href="/favicon-160x160.png" sizes="160x160">
+<link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+<link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="msapplication-TileImage" content="/mstile-144x144.png">
+  <title>Flaw in the Reporter-style data - Style Shachi</title>
+  <meta name="description" content="Programmer, Designer and Writer">
+  <!-- CSS -->
+
+  <link rel="stylesheet" href="/css/base.css" type="text/css" />
+  <link rel="stylesheet" href="/css/fresco.css" type="text/css" />
+
+<!--
+  <script type="text/javascript" src="/js/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="/js/strip.pkgd.min.js"></script>
+<link rel="stylesheet" type="text/css" href="/css/strip.css"/>
+-->
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54750582-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+  <!--[if lt IE 9]>
+    <script src="/js/html5shiv.js"></script>
+  <![endif]-->
+  </head>
+
+  <body>
+    <header id="top">
+
+      <!--<div class="animated-color-line">
+        <div class="colors">
+          <div class="color-part one-bg"></div>
+          <div class="color-part two-bg"></div>
+          <div class="color-part three-bg"></div>
+          <div class="color-part four-bg"></div>
+        </div>
+      </div>-->
+
+      <div class="container animated fadeIn">
+        <div class="fadeInDown animated" style="margin-top: .7rem;">
+<nav>
+  <ul>
+    <li>
+      <a href="/">Home</a>
+    </li>
+    <li >
+      <a href="/collections/">Collections</a>
+    </li>
+    <li >
+      <a href="/contact/">Contact</a>
+    </li>
+  </ul>
+</nav></div>
+
+      </div>
+    </header>
+
+    <div class="container animated fadeInUp">
+      <article>
+          
+          <h1 class="article-title">Flaw in the Reporter-style data</h1>
+          
+          <h5 class="article-subtitle"></h5>
+
+
+
+        <p>It&rsquo;s advisable that you read the <a href="http://hardik.co/2014/03/15/acquiring-data-about-life/">previous article</a> to better understand what I am going to explain here.</p>
+
+<p><figure class="minified">
+    <img src="/images/reporter.png">
+    <figcaption>The Reporter app</figcaption>
+</figure></p>
+
+<p>I discussed in the last article how <a href="http://reporter-app.com">Reporter app</a> provides a means of gathering information about your daily life and activities. The data however is not accurate and representative of your routine. The problem lies in the methodology of the data-acquisition.</p>
+
+<p>The app asks you questions about what you are doing, where you are, with who you are and pretty much anything you configured it to ask you about (this itself is a hack since you cannot create a statistically complete set of questions to quantify all the aspects of your life).</p>
+
+<a name="The.issue.with.data.nonlinearity"></a>
+<h3>The issue with data nonlinearity</h3>
+
+<p>Furthermore, the problem arises even after you have set a few questions. The app reminds you to enter data (<em>reports</em> as they call it) by push notifications. When I&rsquo;m busy, I defer entering that data to a later time. This clusters up data-points non-linearly and creates a distorted measurement of your day.</p>
+
+<p>Check the image below.
+<figure class="minified">
+    <img src="/images/reporterdata.jpg">
+    <figcaption>Nonlinearity in measurements</figcaption>
+</figure></p>
+
+<p>As you can see, in the first case, you ideally report data at the time you are notified to enter it. That creates data-points that are evenly spaced out in time creating a uniformity. But the problem arises when you defer entering data (resulting in the case of <em>stretched data</em> as shown in the image) to a later time which creates nonlinearity (excuse my handwriting which got distorted due to the crippled table in the cafe).</p>
+
+<blockquote><p>Nonlinearity = less data about the times when you are busy and more data about the times when you are free</p></blockquote>
+
+<p>Ideal? Not really. But the app is cool nonetheless.</p>
+
+      </article>
+      <span class="article-date">Published on March 19, 2014.</span>
+      <br />
+      <div class="epilogue">
+        <h4 style="color: #999; margin: 0 0 .55rem 0;">Epilogue</h4>
+
+        <p>Thanks for reading the article! There's <a href="/blog">plenty more to read</a> if you liked this one. My company also develops <a href="https://www.npmjs.org/package/octalbonescript">Octalbonescript</a> and has <a href="http://github.com/theoctal/octalbonescript">open-sourced</a> it. My work/interest aligns towards jQuery, Node.js, AJAX, AngularJS, front-end web-development and software-hardware system design.</p>
+
+        <p>For any questions on open-source hardware, software development and any other projects, reach out on <a href="mailto:hardik@hardik.org">hardik@hardik.org</a> or tweet (<a href="http://twitter.com/hvpandya">@hvpandya</a>) me.</p>
+
+        <p>Subscribe to articles via this <a href="http://hardik.org/feed.xml">RSS feed</a>.</p>
+      </div>
+
+
+      <!--<div class="prev_next post_nav">
+        
+        <p class="previous"><a href="/blog/acquiring-data-about-life" rel="previous" title="Quantified-self data is beautiful, acquisition is painful">← Previous article</a></p>
+
+         
+        <p class="next"> <a href="/blog/anger" rel="next" title="Anger">Next article →</a></p> 
+      </div>-->
+    </div>
+    <br>
+    <footer>
+    <div class="container">
+    <div>&copy; 2015 Hardik Pandya.</div></div>
+
+  </footer>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script type="text/javascript" src="/js/fresco.js"></script>
+  </body>
+</html>

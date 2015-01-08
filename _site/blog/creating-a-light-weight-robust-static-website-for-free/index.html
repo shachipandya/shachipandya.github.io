@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <!-- Basic Page Needs -->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png">
+<link rel="icon" type="image/png" href="/favicon-196x196.png" sizes="196x196">
+<link rel="icon" type="image/png" href="/favicon-160x160.png" sizes="160x160">
+<link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+<link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="msapplication-TileImage" content="/mstile-144x144.png">
+  <title>Creating a light-weight robust static website, for free - Style Shachi</title>
+  <meta name="description" content="Programmer, Designer and Writer">
+  <!-- CSS -->
+
+  <link rel="stylesheet" href="/css/base.css" type="text/css" />
+  <link rel="stylesheet" href="/css/fresco.css" type="text/css" />
+
+<!--
+  <script type="text/javascript" src="/js/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="/js/strip.pkgd.min.js"></script>
+<link rel="stylesheet" type="text/css" href="/css/strip.css"/>
+-->
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54750582-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+  <!--[if lt IE 9]>
+    <script src="/js/html5shiv.js"></script>
+  <![endif]-->
+  </head>
+
+  <body>
+    <header id="top">
+
+      <!--<div class="animated-color-line">
+        <div class="colors">
+          <div class="color-part one-bg"></div>
+          <div class="color-part two-bg"></div>
+          <div class="color-part three-bg"></div>
+          <div class="color-part four-bg"></div>
+        </div>
+      </div>-->
+
+      <div class="container animated fadeIn">
+        <div class="fadeInDown animated" style="margin-top: .7rem;">
+<nav>
+  <ul>
+    <li>
+      <a href="/">Home</a>
+    </li>
+    <li >
+      <a href="/collections/">Collections</a>
+    </li>
+    <li >
+      <a href="/contact/">Contact</a>
+    </li>
+  </ul>
+</nav></div>
+
+      </div>
+    </header>
+
+    <div class="container animated fadeInUp">
+      <article>
+          
+          <h1 class="article-title">Creating a light-weight robust static website, for free</h1>
+          
+          <h5 class="article-subtitle"></h5>
+
+
+
+        <p><em><strong>Update:</strong> The website is now <a href="http://hardikpandya.com">hardikpandya.com</a> and is built with Jekyll. It&rsquo;s running off of <a href="http://digitalocean.com">Digital Ocean SSD Ubuntu server</a> after staying on GitHub Pages for a long time.</em></p>
+
+<hr />
+
+<p>My website <a href="http://hardik.co">Hardik.co</a> was running on Squarespace till now. Squarespace is an all round platform that provides an efficient CMS, domain registration, templates, photography based portfolios, blogs and even <a href="http://blog.squarespace.com/blog/squarespace-commerce-is-here">online stores</a> now. So I could do anything with it. When I started blogging back in 2007, I went with WordPress back then since it was easy to setup and was relatively cheap. Later on, it got boring and I came to know about Squarespace. Hardik.co was running on Squarespace for the last 1 year. But at all times, I was worried about my website and more than that, my content. Someday it could easily be the case when Squarespace (replace Squarespace with any proprietary lock-in you are stuck with) decided to pull the plug and all my content would be gone. <strong>How can I be less worried about this? Only when I own and have the content in my control at all times.</strong> So as my yearly ritual of freshening up the website backend, this time I decided to introduce a whole lot of changes.</p>
+
+<p>First things first, I have no problems with Squarespace. It&rsquo;s an excellent platform for relatively uninformed (in terms of web) people to start websites quickly. But that is where the catch is - it&rsquo;s more for the uninformed and the non-fiddly kind. Which I have grown out of. For a long time now, I was feeling constrained by what Squarespace could do for me. Plus, no access of source files (like CSS and HTML) made it extra difficult to play around with the core of my website. This started becoming a problem. I wanted more control. When you talk about taking control of your web assets, you think of <a href="http://www.marco.org">Marco Arment</a>, <a href="http://paulstamatiou.com">Paul Stamatiou</a> and other similar people who have gone static with their own websites. Call me paranoid, but companies on the web are there to make profits and not for charity. Trust is definitely an issue.</p>
+
+<p><strong>So the stars aligned. I gave in. I went static. I went for freedom.</strong></p>
+
+<p>I have <a href="http://hardik.co/blog/2013/make-a-website-for-free/">listed in past</a> (okay, the title was cheesy!) why making such a static website would be a really nice option (for people like me who want to write and occasionally show off some photographs and do not really require heavy databases and SQL).</p>
+
+<p>I now know more than my own past self. So I can see more reasons why I should have gone this route (static site) much earlier. But anyway, I do so now. <strong>This website officially runs on Jekyll (the Ruby based blogging system) and is hosted on an Amazon S3 bucket somewhere in Ireland (I like to be in the center of the world, at least geographically).</strong></p>
+
+<p>Now yes, I tested the website design and everything on <a href="http://pages.github.com/">GitHub Pages</a> because well, it&rsquo;s free. You can host your static website on GitHub Pages for as long as you want without paying a dime. But there&rsquo;s a catch: <strong>source code of your website will be openly visible to everyone</strong> and anyone can fork it for their use. You can only secure source code of the website on GitHub by paying $7 a month for their basic plan that includes 5 private repositories. I do not want to do this. Because one of the reasons of moving away from Squarespace is their $8 a month price point. I don&rsquo;t mind paying for the site (I did it happily for all these years) but for what I want to achieve with my website (share static articles and pictures), it does not make sense to pay for a server. At the same time, I want to secure my source too. So GitHub is not an option for final deployment (although it&rsquo;s very easy to get started on it while testing and playing with Jekyll).</p>
+
+<p>On enough fiddling, I decided to go with <strong>Amazon S3</strong> for a number of reasons:</p>
+
+<ul>
+<li>I could secure the source of my website.</li>
+<li>Traffic handling capacity of my website is scalable now. So if someday suddenly something went viral from this website (highly unlikely if you ask me), I can rest assured that my website will handle the traffic, thanks to AWS. This makes it a very robust option.</li>
+<li>Almost zero operational costs. The pricing structure of S3 is very generous if you ask me. If your website is small with decent traffic, you will almost always end up saving money (yes I know GitHub Pages is completely free).</li>
+<li><a href="http://hardik.co/blog/2013/Google-Glass-experience/">I have met Werner Vogels (the CTO of Amazon)</a> and he is an awesome inspiration. His own website is static and runs off of S3. So I like to follow in his footsteps.</li>
+<li><strong>I love Amazon.</strong> They are one of those companies that don&rsquo;t give a crap about tracking you and creeping you out by being weird because well, it&rsquo;s not their business model. You pay (for what you use) and they give you what you want. Also, Amazon Web Services (AWS) is something you want to learn and use anyway.</li>
+</ul>
+
+
+<p>So S3 (secure storage service) allows you to host a static website on your AWS account. There are plenty of very good tutorials already written about the process (<a href="http://jonknapp.com/2013/01/deploying-jekyll-to-s3/">here</a>, <a href="http://www.savjee.be/2013/02/howto-host-jekyll-blog-on-amazon-s3/">here</a> and <a href="http://www.allthingsdistributed.com/2011/08/Jekyll-amazon-s3.html">here</a>) so I will not add to that list. Those links I mentioned already assume you have a Jekyll blog. But I believe you might not already have one, so go <a href="http://jekyllrb.com/">here</a> to see how to make one on Jekyll.</p>
+
+<a name="What.if.you.don.t.like.Amazon.S3."></a>
+<h3>What if you don&rsquo;t like Amazon S3?</h3>
+
+<p>Well, you could go with GitHub Pages. If not that, try <a href="http://bitbucket.org">BitBucket</a>&rsquo;s static website hosting service. They do not support Jekyll compiling on their own so you will have to upload your <em>_site</em> folder that you get after compiling your site locally. I would also suggest <a href="http://nearlyfreespeech.net">NearlyFreeSpeech</a> for hosting your site. They have a &lsquo;pay for what you use&rsquo; model. Since your website is (likely to be) lean and light-weight, hosting possibilities are endless. Choose what you like.</p>
+
+<a name="How.do.you.maintain.version.control."></a>
+<h3>How do you maintain version control?</h3>
+
+<p>It&rsquo;s important to maintain a track record of changes you make to your site. At least it&rsquo;s worth looking at when some changes do not go as planned. If you host your site at GitHub Pages, you get the version control from GitHub so that is not a problem. Amazon S3 or most other static hosts do not provide a version control. I use BitBucket for this. BitBucket is a distant cousin of GitHub with a nice feature: <strong>private repo for free</strong>. Job done for me!</p>
+
+<a name="Advantages..There.are.plenty"></a>
+<h3>Advantages? There are plenty</h3>
+
+<ul>
+<li><strong>The website loads insanely fast now</strong> (at least compared to its old loading speeds). This is very important in the current days of mobile computing. Try opening this site on a mobile device or a tablet (it&rsquo;s also responsive).</li>
+<li><strong>I control everything now - the design, URL schemes, number of pages (Squarespace has a limit on this), layout and total size of the website.</strong> This level of control is not possible with proprietary CMSs and lock-ins.</li>
+<li>I own the source code. This adds to the previous point. This is not allowed in most CMSs.</li>
+</ul>
+
+
+<p>There are maybe more advantages but these 3 were enough for me personally to make that transition.</p>
+
+<a name="Why.not.WordPress...some.might.ask."></a>
+<h3>Why not WordPress? (some might ask)</h3>
+
+<p>Yes it&rsquo;s open source and it&rsquo;s the pillar on which many popular websites stand today. But again, I don&rsquo;t require a PHP based database backend and complex setup for my blog. It&rsquo;s redundant and it takes a lot of time to manage. It often involves dealing with updates of software and updates of plugins as well. Plus, playing around with themes is a very complex task (well, at least for me). So this is a no.</p>
+
+<a name="Are.there.other.static.platforms.available."></a>
+<h3>Are there other static platforms available?</h3>
+
+<p>Yes oh yes! There is a bunch of them. Personally I would try out <a href="http://getkirby.com">Kirby</a> someday. There is also <a href="http://staceyapp.com/">Stacey</a>, <a href="http://www.marco.org/secondcrack">Second Crack</a> and <a href="http://octopress.org/">Octopress</a>.</p>
+
+<a name="Are.there.any.apps.for.publishing.static.sites."></a>
+<h3>Are there any apps for publishing static sites?</h3>
+
+<p>Not specifically. But there can be a workflow setup for such a purpose. For OS X, you could use <a href="http://www.noodlesoft.com/hazel.php">Hazel</a> to <strong>look</strong> at a certain folder in Dropbox and transfer your drafts or blogposts to your local repository (in case of GitHub Pages as your host) or to a local folder on your laptop that has your website. Then to compile your website with Jekyll and syncing/uploading it to the server, you could schedule a script through <a href="http://www.peterborgapps.com/lingon/">Lingon</a> to run at certain times of the day. When the script runs, your changes (i.e. new blogpost) will be pushed to your website. Due to the static nature, the post instantaneously goes live of course.</p>
+
+<a name="Are.static.websites.really.that.popular."></a>
+<h3>Are static websites really that popular?</h3>
+
+<p>Yes. There&rsquo;s a whole cult of people who have recently gone static and more and more people make the switch everyday. <a href="https://github.com/mojombo/jekyll/wiki/sites">Here&rsquo;s a list</a> if you want to see. Famous people like Harry Roberts (the <a href="http://csswizardy.com">CSS Wizardry</a> guy) have their websites running on GitHub Pages. So there is no reason for you to not go with it.</p>
+
+<a name="But.do.these.static.websites.look.nice.and.modern..Here.are.some.themes.you.might.want.to.start.out.with"></a>
+<h3>But do these static websites look nice and modern? Here are some themes you might want to start out with</h3>
+
+<p>Of course! When I was considering the switch, I was looking for nice designs (themes) for Jekyll. When I found the ones I liked, I bookmarked them for my reference. I share some of them here. Use them as a starting point for your adventure. But hey, if you want to fork the source of any one of these sites, do ask for permission of its respective owner or check the licenses underneath its source on GitHub (most people are nice and won&rsquo;t say no). To get to the sources of these sites, just search (Ctrl+F is your friend) their names on <a href="https://github.com/mojombo/jekyll/wiki/sites">this page</a>.</p>
+
+<ul>
+<li><a href="http://jgthms.com/">Jeremy Thomas&rsquo;s site</a></li>
+<li><a href="http://dlo.me/">Dan Loewenherz&rsquo;s site</a></li>
+<li><a href="http://dankim.org/">Dan Kim&rsquo;s site</a></li>
+<li><a href="http://nathanstaines.com/">Nathan Staine&rsquo;s site</a></li>
+<li><a href="http://idered.pl/">Kasper Mikiewicz&rsquo;s site</a></li>
+<li><a href="http://awolfe76.github.io/">Andrew Wolfe&rsquo;s site</a></li>
+</ul>
+
+
+<p>For me, this is my website now. This is my playground to test, experiment and break stuff. It has the same domain, the old links will obviously still work (see the difference? had I moved to a proprietary CMS, they might have disallowed me to keep the same URL structure. But in Jekyll, I&rsquo;m the boss and I configure stuff the way I like). I personally had good help from Cole Townsend (<a href="http://twitter.com/ctrunsthis">@CTRunsThis</a>) for design, so a hat tip for him. The fonts served are from <a href="http://typekit.com">Typekit</a> and can easily be from anywhere else as and when I please (see? that is freedom!). The design and source code of Hardik.co is private but I see no harm in sharing it with you if you promise not to copy it blatantly.</p>
+
+<a name="A.word.of.caution.on.exporting.files"></a>
+<h3>A word of caution on exporting files</h3>
+
+<p>I realised this later but I felt it was worth noting. While trying to export posts from Squarespace, the process went all haywire. I have an <em>.xml</em> file from Squarespace that I am supposed to import in to WordPress. <strong>Yes, Squarespace exports are only compatible (by default) to WordPress format.</strong> But dear Squarespace, what if I want to have my posts in simple markdown format? Nope, to even expect that is crazy I guess (stupid lock-ins). This has just made me love my decision of taking control even more. For now, I&rsquo;m slowly moving all old posts here (important ones transferred first of course) and some posts might not make the cut. This is just too painful to do and I never ever want to go through this again.</p>
+
+<p>But hey, if you really dig this design and would want to try it for fiddling and inspiration here you go: mail@hardikpandya.com.</p>
+
+      </article>
+      <span class="article-date">Published on August 23, 2013.</span>
+      <br />
+      <div class="epilogue">
+        <h4 style="color: #999; margin: 0 0 .55rem 0;">Epilogue</h4>
+
+        <p>Thanks for reading the article! There's <a href="/blog">plenty more to read</a> if you liked this one. My company also develops <a href="https://www.npmjs.org/package/octalbonescript">Octalbonescript</a> and has <a href="http://github.com/theoctal/octalbonescript">open-sourced</a> it. My work/interest aligns towards jQuery, Node.js, AJAX, AngularJS, front-end web-development and software-hardware system design.</p>
+
+        <p>For any questions on open-source hardware, software development and any other projects, reach out on <a href="mailto:hardik@hardik.org">hardik@hardik.org</a> or tweet (<a href="http://twitter.com/hvpandya">@hvpandya</a>) me.</p>
+
+        <p>Subscribe to articles via this <a href="http://hardik.org/feed.xml">RSS feed</a>.</p>
+      </div>
+
+
+      <!--<div class="prev_next post_nav">
+        
+        <p class="previous"><a href="/blog/365-days-of-engagement" rel="previous" title="365 days of engagement">← Previous article</a></p>
+
+         
+        <p class="next"> <a href="/blog/my-jekyll-site-publishing-workflow" rel="next" title="My Jekyll-site Publishing Workflow">Next article →</a></p> 
+      </div>-->
+    </div>
+    <br>
+    <footer>
+    <div class="container">
+    <div>&copy; 2015 Hardik Pandya.</div></div>
+
+  </footer>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script type="text/javascript" src="/js/fresco.js"></script>
+  </body>
+</html>

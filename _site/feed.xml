@@ -1,0 +1,631 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Shachi Pandya</title>
+		<description>Fashion Wear Designer</description>		
+		<link></link>
+		<atom:link href="/feed.xml" rel="self" type="application/rss+xml" />
+		
+			<item>
+				<title>Automating Tasks with Gulp.js</title>
+				<description>&lt;p&gt;Another article on coding and tinkering with software. I apologise but this new year, I have some resolutions that I have to adhere to.&lt;/p&gt;
+
+&lt;p&gt;&lt;figure class=&quot;tiny&quot;&gt;
+  &lt;img src=&quot;/images/gulpjs.png&quot;&gt;
+  &lt;figcaption&gt;&lt;/figcaption&gt;
+&lt;/figure&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;a href=&quot;http://gulpjs.com/&quot;&gt;Gulp&lt;/a&gt; is a task automator.&lt;/strong&gt;  - In the coding terms at least. It automates all the boring tasks like bunching together the assets in your project, bundling them up for deployment, minifying them and more. You can think of it &lt;strong&gt;as your private butler that iterates over a list of chores that you have predefined&lt;/strong&gt; on a piece of paper (your &lt;code&gt;gulpfile.js&lt;/code&gt;). These tasks can be anything: deleting certain files, compressing certain files, watching files for changes, live-reloading browser after changes, compressing images, compiling sass and less-type pre-processors and so on (there are so many that I cannot list all of them of course).&lt;/p&gt;
+
+&lt;div class=&quot;note&quot;&gt;&lt;a href=&quot;http://gruntjs.com&quot;&gt;Grunt&lt;/a&gt; is an equally powerful task automator (perhaps even more feature-rich) but I prefer the simplicity and ease of use of Gulp.&lt;/div&gt;
+
+
+&lt;a name=&quot;Integrate.Gulp.in.Your.Project&quot;&gt;&lt;/a&gt;
+&lt;h2&gt;Integrate Gulp in Your Project&lt;/h2&gt;
+
+&lt;p&gt;There&amp;rsquo;s not much in the name of setup here. Since Gulp is built with &lt;a href=&quot;http://nodejs.org&quot;&gt;Node&lt;/a&gt;, you need to have Node installed on your machine alongwith &lt;code&gt;npm&lt;/code&gt;. Once you have that setup, install Gulp with &lt;code&gt;npm install -g gulp&lt;/code&gt; (to add Gulp globally) and &lt;code&gt;npm install gulp --save-dev&lt;/code&gt; (to install Gulp in your project). Then add a file named in your project named &lt;code&gt;gulpfile.js&lt;/code&gt; (blank for now) and you are set to use Gulp.&lt;/p&gt;
+
+&lt;p&gt;See the Gulp package on &lt;code&gt;npm&lt;/code&gt; site here for more information: &lt;a href=&quot;https://www.npmjs.com/package/gulp&quot;&gt;https://www.npmjs.com/package/gulp&lt;/a&gt;.&lt;/p&gt;
+
+&lt;a name=&quot;How.Gulp.Works&quot;&gt;&lt;/a&gt;
+&lt;h3&gt;How Gulp Works&lt;/h3&gt;
+
+&lt;p&gt;There are plenty of articles online to explain this. In simple words though, Gulp has a pool of plugins written on top of it (each to be installed separately after Gulp setup) to help you different tasks. A list of all of them can be found here on the &lt;a href=&quot;http://gulpjs.com&quot;&gt;Gulp site&lt;/a&gt;. You only need to install the ones you need (with &lt;code&gt;npm install&lt;/code&gt;).&lt;/p&gt;
+
+&lt;p&gt;Keep in mind that this will quickly add up to the size of your repository and even version controlling them is not a good idea (since you really don&amp;rsquo;t need to version control these packages). What you can do is to write a &lt;code&gt;.gitignore&lt;/code&gt; file in your base directory of the repo and add the &lt;strong&gt;node_modules&lt;/strong&gt; folder in it (it&amp;rsquo;s can become a really large folder size-wise, so it&amp;rsquo;s advisable to omit it from git).&lt;/p&gt;
+
+&lt;a name=&quot;How.I.Setup.Gulp.On.Hardik.org&quot;&gt;&lt;/a&gt;
+&lt;h2&gt;How I Setup Gulp On Hardik.org&lt;/h2&gt;
+
+&lt;p&gt;So I decided to make a use of it here on my site. I was looking to minify my CSS, JS and do some compression on the images I have on my blog. Since these assets load on every pageload of your site, shaving off a few kilobytes from them matters a lot in site performance.&lt;/p&gt;
+
+&lt;p&gt;Assets to minify:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;CSS (since I don&amp;rsquo;t use SASS, I just want basic minifying)&lt;/li&gt;
+&lt;li&gt;JS&lt;/li&gt;
+&lt;li&gt;Images (basic compression on PNGs and JPGs)&lt;/li&gt;
+&lt;/ol&gt;
+
+
+&lt;p&gt;Other tasks:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Check JS for errors (linting)&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;p&gt;Here&amp;rsquo;s my &lt;code&gt;gulpfile.js&lt;/code&gt; to achieve above tasks. Funny thing about the gulpfile is that it&amp;rsquo;s almost self-explanatory.&lt;/p&gt;
+
+&lt;pre class=&quot;language-javascript&quot; rel=&quot;css&quot;&gt;&lt;code class=&quot;language-javascript&quot; rel=&quot;css&quot;&gt;
+var gulp = require(&#39;gulp&#39;);
+var concat = require(&#39;gulp-concat&#39;); // concatanate to a file
+var rename = require(&#39;gulp-rename&#39;); // rename a file
+var jshint = require(&#39;gulp-jshint&#39;); // check JS code for errors
+var uglify = require(&#39;gulp-uglify&#39;); // minify JS
+var minifycss = require(&#39;gulp-minify-css&#39;); // minify CSS
+var del = require(&#39;del&#39;); // delete files
+var notify = require(&#39;gulp-notify&#39;); // notify in Terminal with a msg
+var imagemin = require(&#39;gulp-imagemin&#39;); // compress images
+var pngquant = require(&#39;imagemin-pngquant&#39;); // compress PNGs
+
+gulp.task(&#39;js&#39;, function() {
+  return gulp.src(&#39;js-src/*.js&#39;) // get all .js files
+  .pipe(concat(&#39;all.js&#39;)) // add them all together
+  .pipe(gulp.dest(&#39;js&#39;)) // put it in a diff directory
+  .pipe(rename({suffix: &#39;.min&#39;})) // add .min suffix
+  .pipe(uglify()) // minify (uglify)
+  .pipe(gulp.dest(&#39;js&#39;)) // put it in the destination directory
+  .pipe(notify({ message: &#39;JS task complete&#39; })); // output success message
+});
+
+gulp.task(&#39;image&#39;, function () {
+  return gulp.src(&#39;images-src/*&#39;) // get all images (png, jpg, jpeg, svg, gif)
+  .pipe(imagemin({
+  progressive: true,
+  svgoPlugins: [{removeViewBox: false}],
+  use: [pngquant()]
+})) // compress all images (you can change this part to your wish)
+  .pipe(gulp.dest(&#39;images&#39;)) // put the compressed images in new folder
+  .pipe(notify({ message: &#39;Image task complete&#39; })); // success message
+});
+
+gulp.task(&#39;lint&#39;, function() {
+  return gulp.src(&#39;js-src/hvp.js&#39;)
+  .pipe(jshint()) // check my own JS code for errors
+  .pipe(jshint.reporter(&#39;default&#39;))
+  .pipe(notify({ message: &#39;Checked JS for errors&#39; }));
+});
+
+gulp.task(&#39;clean&#39;, function(cb) {
+  del([&#39;images-src/*&#39;], cb); // delete images from image-src so the same images don&#39;t get compressed the next time
+});
+
+gulp.task(&#39;css&#39;, function() {
+  return gulp.src(&#39;css-src/*.css&#39;) // same process as js uglify above
+  .pipe(concat(&#39;style.css&#39;))
+  .pipe(gulp.dest(&#39;css&#39;))
+  .pipe(rename({suffix: &#39;.min&#39;}))
+  .pipe(minifycss())
+  .pipe(gulp.dest(&#39;css&#39;))
+  .pipe(notify({ message: &#39;CSS task complete&#39; }));
+});
+
+gulp.task(&#39;default&#39;, [&#39;css&#39;, &#39;js&#39;, &#39;lint&#39;, &#39;images&#39;, &#39;clean&#39;]); // always execute these on `gulp`
+&lt;/code&gt;&lt;/pre&gt;
+
+
+&lt;p&gt;So this is the Gulp setup for my Jekyll blog:&lt;/p&gt;
+
+&lt;p&gt;&lt;figure class=&quot;normalised&quot;&gt;
+  &lt;img src=&quot;/images/gulpjs-setup.jpg&quot;&gt;
+  &lt;figcaption&gt;My Gulp workflow&lt;/figcaption&gt;
+&lt;/figure&gt;&lt;/p&gt;
+
+&lt;p&gt;That&amp;rsquo;s pretty much it. The modules added using &lt;code&gt;require&lt;/code&gt; in the beginning of the file are the ones we use and you have to install each one of them separately. It&amp;rsquo;s advisable to have a &lt;code&gt;package.json&lt;/code&gt; alongside your &lt;code&gt;gulpfile.js&lt;/code&gt; and have them all install as a bundle in one shot with &lt;code&gt;bundle install&lt;/code&gt;. I use &lt;code&gt;notify()&lt;/code&gt; module to inform me when a certain task has finished executing in the Terminal.&lt;/p&gt;
+
+&lt;p&gt;In the end, when I am ready, I will execute &lt;code&gt;gulp&lt;/code&gt; inside my directory and it will execute the &lt;code&gt;default&lt;/code&gt; task which executes the tasks named &lt;code&gt;css&lt;/code&gt; and &lt;code&gt;js&lt;/code&gt; (named so for convenience). It will finish executing in a few seconds and will output the assets in respective directories (defined in the code itself). This is just the surface of what Gulp can do (and the best use case as well). You can find a lot of other smart workflows on the Internet built around Gulp.&lt;/p&gt;
+
+&lt;a name=&quot;Helpful.Links&quot;&gt;&lt;/a&gt;
+&lt;h3&gt;Helpful Links&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://travismaynard.com/writing/getting-started-with-gulp&quot;&gt;Getting started with Gulp as a complete beginner&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://markgoodyear.com/2014/01/getting-started-with-gulp/&quot;&gt;Another very good walkthrough on Gulp&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.devworkflows.com/posts/adding-image-optimization-to-your-gulp-workflow/&quot;&gt;Automating image optimization with Gulp&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://developers.google.com/speed/docs/insights/MinifyResources&quot;&gt;Minifying site resources and effect on pagespeed&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/sindresorhus/gulp-imagemin&quot;&gt;&lt;code&gt;gulp-imagemin&lt;/code&gt; on Github&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://gulpjs.com/plugins/&quot;&gt;Searchable list of all Gulp plugins&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+				<pubDate>Wed, 07 Jan 2015 00:00:00 +0530</pubDate>
+				<link>/blog/gulpjs-automation</link>
+				<guid isPermaLink="true">/blog/gulpjs-automation</guid>
+			</item>
+		
+			<item>
+				<title>Interactive Download Button in jQuery</title>
+				<description>&lt;p&gt;As I shared in the &lt;a href=&quot;http://hardik.org/blog/fifth-gear-coding/&quot;&gt;previous article&lt;/a&gt;, I have recently completed a bit of work on &lt;a href=&quot;http://jquery.com&quot;&gt;jQuery&lt;/a&gt; and I&amp;rsquo;m fiddling around with a few examples and UI components.&lt;/p&gt;
+
+&lt;p&gt;I recently had a couple of Download buttons in my article that were basically just links to file on server. I thought I should make them a bit more interactive rather than just dead links. So I added a bit of jQuery and made them informative.
+This is just start and a lot can be done with some more scripting but here&amp;rsquo;s the first iteration.&lt;/p&gt;
+
+&lt;pre class=&quot;language-javascript&quot; rel=&quot;css&quot;&gt;&lt;code class=&quot;language-javascript&quot; rel=&quot;css&quot;&gt;
+var $button = $(&quot;a.download-button&quot;); //finding the matching buttons on the DOM
+
+$button.on(&#39;click&#39;, function(){  // adding click event handler to the buttons
+  var $clickedButton = $(this);  // storing the current button for reference
+  var $href = $(this).attr(&quot;href&quot;);
+
+  $clickedButton.text(&quot;Downloading...&quot;);
+  $clickedButton.css(&quot;background-color&quot;, &quot;#275AB0&quot;);
+
+  setTimeout(function(){
+    $clickedButton.removeAttr(&quot;href&quot;); // remove href so further clicks don&#39;t trigger download
+    }, 50);
+
+  setTimeout(function(){
+    $clickedButton.text(&quot;Downloaded.&quot;);
+    $clickedButton.css(&quot;background-color&quot;, &quot;#aaa&quot;);
+    }, 1500); // this executes 1.5 seconds after click event
+
+    $clickedButton.off(); // remove the event listener to disable further clicks
+
+});
+
+&lt;/code&gt;&lt;/pre&gt;
+
+
+
+
+&lt;div class=&quot;jsbin&quot;&gt;
+&lt;a class=&quot;jsbin-embed&quot; href=&quot;http://jsbin.com/xowiha/17/embed?output&amp;height=300px&quot;&gt;Interactive Download Button in jQuery&lt;/a&gt;&lt;script src=&quot;http://static.jsbin.com/js/embed.js&quot;&gt;&lt;/script&gt;
+&lt;/div&gt;
+
+
+
+
+&lt;div class=&quot;disclaimer&quot;&gt;Also, &lt;a href=&quot;http://jsbin.com&quot;&gt;JS Bin&lt;/a&gt; is awesome and you should totally use it.&lt;/div&gt;
+
+
+&lt;p&gt;As you can see in the code block, I&amp;rsquo;ve put a &lt;u&gt;small delay (50ms) before removing the&lt;/u&gt; &lt;code&gt;href&lt;/code&gt; &lt;u&gt;attribute from the link&lt;/u&gt; because if I remove it instantly, the resource (file) cannot be reached when the user clicks the button, so the downloading doesn&amp;rsquo;t happen. Any small amount of delay can be used.&lt;/p&gt;
+</description>
+				<pubDate>Fri, 02 Jan 2015 00:00:00 +0530</pubDate>
+				<link>/blog/interactive-download-button-in-jquery</link>
+				<guid isPermaLink="true">/blog/interactive-download-button-in-jquery</guid>
+			</item>
+		
+			<item>
+				<title>Fifth Gear on Coding</title>
+				<description>&lt;p&gt;I always thought I would program and design applications and software for people to use. With the advent of amazing frameworks and ever-growing list of helpful tools, it&amp;rsquo;s easier than ever to begin doing exactly that - developing kickass software and apps.&lt;/p&gt;
+
+&lt;div class=&quot;aside&quot;&gt;Good software is sexy.&lt;/div&gt;
+
+
+&lt;p&gt;I&amp;rsquo;m a sucker for well-designed apps - on iOS, OS X and web. My love for great software grows tenfold when I&amp;rsquo;m able to reserve a table at a restaurant or book a movie ticket in a jiffy on my phone while driving my car. That&amp;rsquo;s real value you give to your users. That&amp;rsquo;s software being sexy.&lt;/p&gt;
+
+&lt;a name=&quot;I.Wanted.to.Be.a.Maker&quot;&gt;&lt;/a&gt;
+&lt;h2&gt;I Wanted to Be a Maker&lt;/h2&gt;
+
+&lt;p&gt;Every time I used great software, it made me want to make something like that of my own. It made me want to be the creator of such delight. A great way to do this is to enable and equip yourself with enough knowledge to be able to do so.&lt;/p&gt;
+
+&lt;p&gt;So I started learning to code (almost 4 years ago now). Initially it was HTML, CSS and basic web stuff. I made myself comfortable with the nuances of how the web worked and started working on some front-end stuff (that work resulted in the design of &lt;a href=&quot;http://eventviva.com&quot;&gt;EventViva&lt;/a&gt;).&lt;/p&gt;
+
+&lt;p&gt;I was still barely able to think of actual full-stack app design though. Maybe not even close. I didn&amp;rsquo;t know any of the &amp;ldquo;cool&amp;rdquo; languages like JavaScript or jQuery. All I made was static pages that stayed on the screen like &lt;strong&gt;a lazy-sloth-party doing nothing (but at the same time, mocking me with judgmental faces at my ignorance of real app-design knowledge).&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;It was time to change that. It was time to learn some cool new tools that would enhance my value.&lt;/p&gt;
+
+&lt;a name=&quot;Up.came.Treehouse&quot;&gt;&lt;/a&gt;
+&lt;h2&gt;Up came Treehouse&lt;/h2&gt;
+
+&lt;p&gt;The &lt;a href=&quot;http://teamtreehouse.com&quot;&gt;Treehouse&lt;/a&gt;. I bought the membership there and started learning some stuff on it. I know, there are plenty of places on the web to start to learn coding. Many are even free. I had forayed into many of them but none had stuck. Treehouse was also a little hard to get habituated to. Also, unlike the free alternatives (which are not even that good to be honest), Treehouse costs a non-trivial amount of money ($25/month for a pro membership). But to be honest &lt;strong&gt;it was the money that kind of forced me to stick to a daily routine of finishing lessons after lessons (this is how a gym membership is supposed to help you get off your butt, but it most definitely doesn&amp;rsquo;t!).&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;figure&gt;
+&lt;img src=&quot;/images/treehouse.jpg&quot;&gt;
+&lt;figcaption&gt;Treehouse for learning&lt;/figcaption&gt;
+&lt;/figure&gt;&lt;/p&gt;
+
+&lt;p&gt;But I started. I quickly became addicted to the &lt;strong&gt;video followed by a quiz/programming exercise&lt;/strong&gt; style of learning. It grew on me and I started finishing course after course. I couldn&amp;rsquo;t believe that the concepts I was so afraid of learning so far were nothing but a 6 hour tutorial away from being the hammer of my toolset.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;The great thing about Treehouse is that the content is really really of high value.&lt;/strong&gt; It even has a gamification metric so you can earn points and badges as you progress through chapters. Hey, everything helps! By now, I&amp;rsquo;ve almost paid 5 months worth of subscription fees and have learned stuff that will stay with me forever. That&amp;rsquo;s value for money.&lt;/p&gt;
+
+&lt;p&gt;I cannot learn by reading the books (maybe that&amp;rsquo;s the right way to learn, but who cares) and I would rather build stuff and break stuff and test stuff and learn along the way. At least this is the method that works with coding since you can always see your creations brought to life right on your lap (no pun).&lt;/p&gt;
+
+&lt;a name=&quot;Onwards.to.AngularJS&quot;&gt;&lt;/a&gt;
+&lt;h2&gt;Onwards to AngularJS&lt;/h2&gt;
+
+&lt;p&gt;So my coding journey continues and I couldn&amp;rsquo;t be happier. I am now on to AngularJS and hope to get myself accustomed to it in the coming weeks.&lt;/p&gt;
+
+&lt;p&gt;Meanwhile I am also working on a web-app where I&amp;rsquo;m using all these newly learned tools and I will share more information about in a few days.&lt;/p&gt;
+
+&lt;p&gt;If you&amp;rsquo;re looking to learn to code and learn something specific, Treehouse has an &lt;a href=&quot;http://teamtreehouse.com/library&quot;&gt;awesome portfolio of courses&lt;/a&gt; that would make your nerd-mouth water. As always, it&amp;rsquo;s never too early nor too late when you want to learn. Hop on!&lt;/p&gt;
+</description>
+				<pubDate>Thu, 01 Jan 2015 00:00:00 +0530</pubDate>
+				<link>/blog/fifth-gear-coding</link>
+				<guid isPermaLink="true">/blog/fifth-gear-coding</guid>
+			</item>
+		
+			<item>
+				<title>Twitter for iOS Dark Mode Concept</title>
+				<description>&lt;p&gt;For the past 1 month, I have switched to the official iOS Twitter app for using Twitter on iPhone. I used Tweetbot before but Twitter&amp;rsquo;s complicated API policies made Tweetbot not capable of leveraging the new features Twitter launched.&lt;/p&gt;
+
+&lt;p&gt;A full-blown Twitter client comparison can be &lt;a href=&quot;http://www.macstories.net/stories/twitter-clients-in-2014/&quot;&gt;found here&lt;/a&gt; that explains why Twitter&amp;rsquo;s own iOS app is your best bet going forward because Twitter&amp;rsquo;s closing down the new features by not allowing them into its API.&lt;/p&gt;
+
+&lt;a name=&quot;On.to.Twitter.for.iOS&quot;&gt;&lt;/a&gt;
+&lt;h2&gt;On to Twitter for iOS&lt;/h2&gt;
+
+&lt;p&gt;So Twitter&amp;rsquo;s official app is not that bad. In fact it has the Discovery tab that I really like. But switching from Tweetbot is not unnoticeable. I mean I do miss certain things.&lt;/p&gt;
+
+&lt;div class=&quot;aside&quot;&gt;Most importantly, I miss the Dark Mode theme.&lt;/div&gt;
+
+
+&lt;p&gt;As you may have noticed on my site&amp;rsquo;s homepage as well, &lt;strong&gt;I love less contrast and comfortable dark background reading.&lt;/strong&gt; Twitter&amp;rsquo;s app is all white with the iconic blue thrown in all over the app.&lt;/p&gt;
+
+&lt;blockquote&gt;&lt;p&gt;Lots of white makes the screen almost blinding at night when I&amp;rsquo;m going through tweets. It also affects battery a lot since Twitter&amp;rsquo;s my most used app on the phone. All-white interface also makes it hard to distinguish important details around the tweets.&lt;/p&gt;&lt;/blockquote&gt;
+
+&lt;a name=&quot;Hence.the.Conceptual.Redesign&quot;&gt;&lt;/a&gt;
+&lt;h2&gt;Hence the Conceptual Redesign&lt;/h2&gt;
+
+&lt;p&gt;So what did I do? I opened up Sketch.app and made a redesign that I would love using myself. Now I know Twitter probably won&amp;rsquo;t integrate this in the app any time soon but I took it upon myself as a design challenge and out of curiosity to see how it would look if they did make a dark mode available in the app.&lt;/p&gt;
+
+&lt;a name=&quot;Here.s.My.Concept&quot;&gt;&lt;/a&gt;
+&lt;h3&gt;Here&amp;rsquo;s My Concept&lt;/h3&gt;
+
+&lt;p&gt;&lt;figure class = &quot;small&quot;&gt;
+    &lt;img src=&quot;/images/darkmode.png&quot;&gt;
+    &lt;figcaption&gt;Dark mode theme for Twitter for iOS&lt;/figcaption&gt;
+&lt;/figure&gt;&lt;/p&gt;
+
+&lt;p&gt;Granted, it looks very similar to the dark mode in Tweetbot. But here&amp;rsquo;s where it can be different: &lt;strong&gt;functional performance and operational design.&lt;/strong&gt; The app can have the same operations, menus and flow that it has right now and just have a visual dark mode.&lt;/p&gt;
+
+&lt;p&gt;Here&amp;rsquo;s how it looks side by side -&lt;/p&gt;
+
+&lt;p&gt;&lt;figure class = &quot;minified&quot;&gt;
+    &lt;img src=&quot;/images/sidebyside.png&quot;&gt;
+    &lt;figcaption&gt;&lt;/figcaption&gt;
+&lt;/figure&gt;&lt;/p&gt;
+
+&lt;div class=&quot;aside&quot;&gt;Much better, right?&lt;/div&gt;
+
+
+&lt;p&gt;Now as you might have noticed, I changed the main body fonts in the mockup. It&amp;rsquo;s Proxima Nova since it looks much more readable in the &lt;em&gt;light&lt;/em&gt; weight on dark backgrounds. I prefer it to Helvetica Neue of the original app.&lt;/p&gt;
+
+&lt;a name=&quot;L.em.Update..em.&quot;&gt;&lt;/a&gt;
+&lt;h3&gt;&lt;em&gt;Update&lt;/em&gt;&lt;/h3&gt;
+
+&lt;p&gt;So I&amp;rsquo;ve gone ahead and made a profile view as well. Again, both views are conceptually very different and they highlight completely different details that require a re-thinking of the design completely. This page looks visually pleasant since I&amp;rsquo;ve had more liberties here than the default timeline view which doesn&amp;rsquo;t leave much room for innovation.&lt;/p&gt;
+
+&lt;p&gt;&lt;figure class = &quot;small&quot;&gt;
+    &lt;img src=&quot;/images/darkmodeprofile.png&quot;&gt;
+    &lt;figcaption&gt;Dark mode profile view&lt;/figcaption&gt;
+&lt;/figure&gt;&lt;/p&gt;
+
+&lt;p&gt;And this is the profile view side by side -&lt;/p&gt;
+
+&lt;p&gt;&lt;figure class = &quot;minified&quot;&gt;
+    &lt;img src=&quot;/images/sidebysidedarkprofile.png&quot;&gt;
+    &lt;figcaption&gt;&lt;/figcaption&gt;
+&lt;/figure&gt;&lt;/p&gt;
+
+&lt;p&gt;As it goes, the source .sketch file for the profile page is also available below for download.&lt;/p&gt;
+
+&lt;a name=&quot;Made.with.Sketch.app&quot;&gt;&lt;/a&gt;
+&lt;h2&gt;Made with Sketch.app&lt;/h2&gt;
+
+&lt;p&gt;This mockup was made exclusively with Sketch.app and all its vector goodness. If you&amp;rsquo;re interested in fiddling with the actual design file, go ahead by all means.&lt;/p&gt;
+
+&lt;center&gt;&lt;a href=&quot;/downloads/twitterdarkmode.sketch&quot; class = &quot;download-button&quot;&gt;Download the Timeline view&lt;/a&gt;&lt;/center&gt;
+
+
+&lt;center&gt;&lt;a href=&quot;/downloads/twitterdarkmodeprofile.sketch&quot; class = &quot;download-button&quot;&gt;Download the Profile view&lt;/a&gt;&lt;/center&gt;
+
+
+&lt;hr /&gt;
+
+&lt;a name=&quot;Sources&quot;&gt;&lt;/a&gt;
+&lt;h3&gt;Sources&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;A special mention to the &lt;a href=&quot;http://www.teehanlax.com/tools/iphone/&quot;&gt;wireframes for iOS&lt;/a&gt; provided by the revered folks at &lt;a href=&quot;http://www.teehanlax.com&quot;&gt;Teehan+Lax&lt;/a&gt; studio&lt;/li&gt;
+&lt;li&gt;All the vector icons are from &lt;a href=&quot;http://www.entypo.com/&quot;&gt;Entypo&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;The amazing Sketch.app is by &lt;a href=&quot;http://bohemiancoding.com/sketch/&quot;&gt;Bohemian Coding&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;p&gt;Direct your questions and queries to &lt;a href=&quot;mailto:hardik@hardik.org&quot;&gt;hardik@hardik.org&lt;/a&gt;.&lt;/p&gt;
+</description>
+				<pubDate>Fri, 12 Dec 2014 00:00:00 +0530</pubDate>
+				<link>/blog/twitter-ios-dark-mode</link>
+				<guid isPermaLink="true">/blog/twitter-ios-dark-mode</guid>
+			</item>
+		
+			<item>
+				<title>Automation in Amazon Fulfilment Center</title>
+				<description>&lt;p&gt;You cannot be the sole e-commerce giant in the world for no reason. This is just a fascinating level of automation in supply and delivery management.&lt;/p&gt;
+
+&lt;p&gt;See in video the eighth generation distribution and fulfilment center of Amazon in action.&lt;/p&gt;
+
+&lt;center&gt;&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;//www.youtube.com/embed/tMpsMt7ETi8&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;&lt;/center&gt;
+
+</description>
+				<pubDate>Fri, 05 Dec 2014 00:00:00 +0530</pubDate>
+				<link>/blog/amazon-fulfilment-center</link>
+				<guid isPermaLink="true">/blog/amazon-fulfilment-center</guid>
+			</item>
+		
+			<item>
+				<title>On Turning 25</title>
+				<description>&lt;p&gt;&lt;figure class=&quot;small&quot;&gt;
+    &lt;img src=&quot;/images/motivation25.png&quot;&gt;
+    &lt;figcaption&gt;So this happened&amp;hellip;&lt;/figcaption&gt;
+&lt;/figure&gt;&lt;/p&gt;
+
+&lt;p&gt;It&amp;rsquo;s a nice little Chrome plugin found &lt;a href=&quot;https://chrome.google.com/webstore/detail/motivation/ofdgfpchbidcgncgfpdlpclnpaemakoj&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Incidentally this is my 100th article on the site as well. I cannot say I didn&amp;rsquo;t plan it to be this way though.&lt;/p&gt;
+
+&lt;p&gt;So today I turn 25. As every single birthday after the 22nd one is, this one is also special. The number didn&amp;rsquo;t matter when I was in the &amp;lsquo;teens&amp;rsquo; but after grad school, every single one feels important, valuable and memory-bearer. So many things happened in the last year since I wrote &lt;a href=&quot;http://hardik.org/blog/on-turning-24/&quot;&gt;this&lt;/a&gt; - good, bad and awesome. And I&amp;rsquo;m thankful for all of those for they helped shape me as a wee bit more experienced and a more mature person. This is my first birthday post-marriage and hence it&amp;rsquo;s a special one.&lt;/p&gt;
+
+&lt;p&gt;For those not in the know, this is the girl I spend my life with:&lt;/p&gt;
+
+&lt;blockquote class=&quot;instagram-media&quot; data-instgrm-version=&quot;4&quot; style=&quot; background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:658px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);&quot;&gt;&lt;div style=&quot;padding:8px;&quot;&gt; &lt;div style=&quot; background:#F8F8F8; line-height:0; margin-top:40px; padding:50% 0; text-align:center; width:100%;&quot;&gt; &lt;div style=&quot; background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAsCAMAAAApWqozAAAAGFBMVEUiIiI9PT0eHh4gIB4hIBkcHBwcHBwcHBydr+JQAAAACHRSTlMABA4YHyQsM5jtaMwAAADfSURBVDjL7ZVBEgMhCAQBAf//42xcNbpAqakcM0ftUmFAAIBE81IqBJdS3lS6zs3bIpB9WED3YYXFPmHRfT8sgyrCP1x8uEUxLMzNWElFOYCV6mHWWwMzdPEKHlhLw7NWJqkHc4uIZphavDzA2JPzUDsBZziNae2S6owH8xPmX8G7zzgKEOPUoYHvGz1TBCxMkd3kwNVbU0gKHkx+iZILf77IofhrY1nYFnB/lQPb79drWOyJVa/DAvg9B/rLB4cC+Nqgdz/TvBbBnr6GBReqn/nRmDgaQEej7WhonozjF+Y2I/fZou/qAAAAAElFTkSuQmCC); display:block; height:44px; margin:0 auto -44px; position:relative; top:-22px; width:44px;&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;p style=&quot; color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;&quot;&gt;&lt;a href=&quot;https://instagram.com/p/o6CTn0Ps35/&quot; style=&quot; color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none;&quot; target=&quot;_top&quot;&gt;A photo posted by Hardik Pandya (@hvpandya)&lt;/a&gt; on &lt;time style=&quot; font-family:Arial,sans-serif; font-size:14px; line-height:17px;&quot; datetime=&quot;2014-06-06T14:58:54+00:00&quot;&gt;Jun 6, 2014 at 7:58am PDT&lt;/time&gt;&lt;/p&gt;&lt;/div&gt;&lt;/blockquote&gt;
+
+
+&lt;script async defer src=&quot;//platform.instagram.com/en_US/embeds.js&quot;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;Apart from that I managed to rake up a lot of travel-mileage this past year. We traveled a lot north, south and center. I even checked off an item off my bucket-list when I visited &lt;a href=&quot;http://hardik.org/blog/ladakh&quot;&gt;Ladakh&lt;/a&gt; a few months ago.&lt;/p&gt;
+
+&lt;blockquote class=&quot;instagram-media&quot; data-instgrm-captioned data-instgrm-version=&quot;4&quot; style=&quot; background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:658px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);&quot;&gt;&lt;div style=&quot;padding:8px;&quot;&gt; &lt;div style=&quot; background:#F8F8F8; line-height:0; margin-top:40px; padding:50% 0; text-align:center; width:100%;&quot;&gt; &lt;div style=&quot; background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAsCAMAAAApWqozAAAAGFBMVEUiIiI9PT0eHh4gIB4hIBkcHBwcHBwcHBydr+JQAAAACHRSTlMABA4YHyQsM5jtaMwAAADfSURBVDjL7ZVBEgMhCAQBAf//42xcNbpAqakcM0ftUmFAAIBE81IqBJdS3lS6zs3bIpB9WED3YYXFPmHRfT8sgyrCP1x8uEUxLMzNWElFOYCV6mHWWwMzdPEKHlhLw7NWJqkHc4uIZphavDzA2JPzUDsBZziNae2S6owH8xPmX8G7zzgKEOPUoYHvGz1TBCxMkd3kwNVbU0gKHkx+iZILf77IofhrY1nYFnB/lQPb79drWOyJVa/DAvg9B/rLB4cC+Nqgdz/TvBbBnr6GBReqn/nRmDgaQEej7WhonozjF+Y2I/fZou/qAAAAAElFTkSuQmCC); display:block; height:44px; margin:0 auto -44px; position:relative; top:-22px; width:44px;&quot;&gt;&lt;/div&gt;&lt;/div&gt; &lt;p style=&quot; margin:8px 0 0 0; padding:0 4px;&quot;&gt; &lt;a href=&quot;https://instagram.com/p/thlzrivsyW/&quot; style=&quot; color:#000; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none; word-wrap:break-word;&quot; target=&quot;_top&quot;&gt;Royal Enfield atop Khardungla Pass. Legends are really true. It&amp;#39;s a collector&amp;#39;s edition. #ladakh #khardungla #india #travel&lt;/a&gt;&lt;/p&gt; &lt;p style=&quot; color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;&quot;&gt;A photo posted by Hardik Pandya (@hvpandya) on &lt;time style=&quot; font-family:Arial,sans-serif; font-size:14px; line-height:17px;&quot; datetime=&quot;2014-09-29T09:45:04+00:00&quot;&gt;Sep 9, 2014 at 2:45am PDT&lt;/time&gt;&lt;/p&gt;&lt;/div&gt;&lt;/blockquote&gt;
+
+
+&lt;script async defer src=&quot;//platform.instagram.com/en_US/embeds.js&quot;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;So for this coming year in life, I do not have outrageous wishes, just the simple usual stuff. And I would be very satisfied if I managed to fulfill all of it.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Work even more.&lt;/li&gt;
+&lt;li&gt;Take even more photographs.&lt;/li&gt;
+&lt;li&gt;Travel even more.&lt;/li&gt;
+&lt;li&gt;Love even more.&lt;/li&gt;
+&lt;li&gt;Ditch anger.&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;blockquote class=&quot;instagram-media&quot; data-instgrm-captioned data-instgrm-version=&quot;4&quot; style=&quot; background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:658px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);&quot;&gt;&lt;div style=&quot;padding:8px;&quot;&gt; &lt;div style=&quot; background:#F8F8F8; line-height:0; margin-top:40px; padding:50% 0; text-align:center; width:100%;&quot;&gt; &lt;div style=&quot; background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAsCAMAAAApWqozAAAAGFBMVEUiIiI9PT0eHh4gIB4hIBkcHBwcHBwcHBydr+JQAAAACHRSTlMABA4YHyQsM5jtaMwAAADfSURBVDjL7ZVBEgMhCAQBAf//42xcNbpAqakcM0ftUmFAAIBE81IqBJdS3lS6zs3bIpB9WED3YYXFPmHRfT8sgyrCP1x8uEUxLMzNWElFOYCV6mHWWwMzdPEKHlhLw7NWJqkHc4uIZphavDzA2JPzUDsBZziNae2S6owH8xPmX8G7zzgKEOPUoYHvGz1TBCxMkd3kwNVbU0gKHkx+iZILf77IofhrY1nYFnB/lQPb79drWOyJVa/DAvg9B/rLB4cC+Nqgdz/TvBbBnr6GBReqn/nRmDgaQEej7WhonozjF+Y2I/fZou/qAAAAAElFTkSuQmCC); display:block; height:44px; margin:0 auto -44px; position:relative; top:-22px; width:44px;&quot;&gt;&lt;/div&gt;&lt;/div&gt; &lt;p style=&quot; margin:8px 0 0 0; padding:0 4px;&quot;&gt; &lt;a href=&quot;https://instagram.com/p/uxdW2HPszf/&quot; style=&quot; color:#000; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none; word-wrap:break-word;&quot; target=&quot;_top&quot;&gt;Sand dunes of Jaisalmer #jaisalmer #rajasthan #travel #india&lt;/a&gt;&lt;/p&gt; &lt;p style=&quot; color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;&quot;&gt;A photo posted by Hardik Pandya (@hvpandya) on &lt;time style=&quot; font-family:Arial,sans-serif; font-size:14px; line-height:17px;&quot; datetime=&quot;2014-10-30T10:10:28+00:00&quot;&gt;Oct 10, 2014 at 3:10am PDT&lt;/time&gt;&lt;/p&gt;&lt;/div&gt;&lt;/blockquote&gt;
+
+
+&lt;script async defer src=&quot;//platform.instagram.com/en_US/embeds.js&quot;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;There&amp;rsquo;s a great quote by C.S. Lewis,&lt;/p&gt;
+
+&lt;div class=&quot;aside&quot;&gt;Isn&#39;t it funny how day by day nothing changes, but when you look back, everything is different...&lt;/div&gt;
+
+
+&lt;p&gt;Live, don&amp;rsquo;t just exist. Years will go by anyway.&lt;/p&gt;
+</description>
+				<pubDate>Wed, 19 Nov 2014 00:00:00 +0530</pubDate>
+				<link>/blog/on-turning-25</link>
+				<guid isPermaLink="true">/blog/on-turning-25</guid>
+			</item>
+		
+			<item>
+				<title>Math and Cryptography behind Bitcoin</title>
+				<description>&lt;p&gt;Bitcoins have been a revelation lately. Ever since the great price spike of &lt;a href=&quot;http://blogs.marketwatch.com/thetell/2013/11/29/bitcoin-hits-record-1242-as-it-nears-value-of-ounce-of-gold/&quot;&gt;November/December 2013 when it peaked at more than $1200/BTC&lt;/a&gt;, it&amp;rsquo;s been in the news for good and bad reasons.&lt;/p&gt;
+
+&lt;p&gt;But it has its roots in cryptography. Cryptography is based completely on random numbers and mathematics around randomness. This randomness forms basis of encryption and authentication which leads to the widely used public-key and private-key algorithm. Bitcoin and blockchains (bitcoin&amp;rsquo;s decentralised ledger) makes use of public/private-keys for initiating and authenticating transactions and keeping scores of balances.&lt;/p&gt;
+
+&lt;p&gt;This article explains how &lt;strong&gt;currencies and payments can be handled without any central authority (e.g. Banks) and how they can be executed in a fast and secure manner, worldwide.&lt;/strong&gt; The future looks bright for bitcoins and the science behind it is even more astonishing. This is frankly the best explanation of the way bitcoins work, that I&amp;rsquo;ve seen.&lt;/p&gt;
+</description>
+				<pubDate>Mon, 17 Nov 2014 00:00:00 +0530</pubDate>
+				<link>/blog/math-behind-bitcoin</link>
+				<guid isPermaLink="true">/blog/math-behind-bitcoin</guid>
+			</item>
+		
+			<item>
+				<title>My Tool Stack</title>
+				<description>&lt;p&gt;Tool stacks are very interesting. To geeks like myself, it&amp;rsquo;s very important to know what tools and apps and services fellow geeks use to thrive in their respective fields. Sharing workflows and improving your own from others&#39; is very rewarding and keeps one on track and helps one continually furnish the way he/she works.&lt;/p&gt;
+
+&lt;p&gt;I am a regular reader and a fan of the &lt;a href=&quot;http://thesweetsetup.com&quot;&gt;Sweet Setup&lt;/a&gt; and &lt;a href=&quot;http://macsparky.com&quot;&gt;David Sparks&lt;/a&gt;&amp;rsquo;s home-screen series. This way I don&amp;rsquo;t miss out on the cool new service or app that I should be using. I have been touted as an &amp;ldquo;early adopter&amp;rdquo; many times and I pride myself in heralding the tag.&lt;/p&gt;
+
+&lt;a name=&quot;My.Favourite.Services&quot;&gt;&lt;/a&gt;
+&lt;h1&gt;My Favourite Services&lt;/h1&gt;
+
+&lt;p&gt;So lets dive in to the list of things I use. It&amp;rsquo;s worth noting that I value and cherish the &lt;strong&gt;delight&lt;/strong&gt; factor way more than I should when it comes to software.&lt;/p&gt;
+
+&lt;a name=&quot;Email&quot;&gt;&lt;/a&gt;
+&lt;h2&gt;Email&lt;/h2&gt;
+
+&lt;p&gt;I loved (I still do) &lt;a href=&quot;http://fastmail.com&quot;&gt;Fastmail&lt;/a&gt;. It&amp;rsquo;s without a doubt the purest execution of IMAP I have used. It&amp;rsquo;s splendid. But I got tired of not being able to share files and collaborate with my co-founder and colleagues who used &lt;a href=&quot;https://www.google.com/url?sa=t&amp;amp;rct=j&amp;amp;q=&amp;amp;esrc=s&amp;amp;source=web&amp;amp;cd=1&amp;amp;cad=rja&amp;amp;uact=8&amp;amp;ved=0CC4QFjAA&amp;amp;url=https%3A%2F%2Fwww.google.com%2Fwork%2Fapps%2Fbusiness%2F&amp;amp;ei=RudgVOqyBo6nuQTix4KYBA&amp;amp;usg=AFQjCNG9Nsv_AkwHgSlDko7t5p7HdBZEeQ&amp;amp;bvm=bv.79189006,d.c2E&quot;&gt;Google Apps&lt;/a&gt;. I gave in and signed up for Google Apps (Gmail). It&amp;rsquo;s no longer free and I am paying INR 125/user/month for my and my wife&amp;rsquo;s accounts. For all the privacy concerns that Google invites, on the plus side the service itself is just amazing. It may not be pure IMAP but as a mail backend, it&amp;rsquo;s flawless and &lt;a href=&quot;http://www.google.com/inbox/&quot;&gt;improving&lt;/a&gt;. So Gmail it is. I still care about my privacy but I think as long as they don&amp;rsquo;t leak/lose my data, I am reasonably fine with it.&lt;/p&gt;
+
+&lt;a name=&quot;Apps&quot;&gt;&lt;/a&gt;
+&lt;h3&gt;Apps&lt;/h3&gt;
+
+&lt;p&gt;On iOS, I use &lt;a href=&quot;http://mailboxapp.com&quot;&gt;Mailbox&lt;/a&gt;. It allows me to create actionables/snoozes from emails. It&amp;rsquo;s almost as if you created a reminder in your to-do manager. This obviates the need to integrate the email with your to-do system. It also has &lt;strong&gt;push notifications&lt;/strong&gt; on iOS.&lt;/p&gt;
+
+&lt;p&gt;On Mac, I recently converted from Mail.app to Mailbox&amp;rsquo;s OS X client. It&amp;rsquo;s in beta but it works fine for now.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;For the non-taggers, Mailbox is perfect.&lt;/strong&gt; It doesn&amp;rsquo;t support Gmail tags but I don&amp;rsquo;t use tags a lot and the ones I do are applied automatically with rules for minor organising.&lt;/p&gt;
+
+&lt;a name=&quot;Notes&quot;&gt;&lt;/a&gt;
+&lt;h2&gt;Notes&lt;/h2&gt;
+
+&lt;p&gt;This is another important area. For notes, I emphasise on 4 things:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Ubiquitous apps (iOS, Mac, Optionally Web)&lt;/li&gt;
+&lt;li&gt;Fast and reliable sync&lt;/li&gt;
+&lt;li&gt;Image and document support&lt;/li&gt;
+&lt;li&gt;Phone-camera based scanning (for paperless lifestyle) and optional OCR&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;p&gt;You can already see where this is going. &lt;a href=&quot;http://evernote.com&quot;&gt;Evernote&lt;/a&gt; is my choice for note-taking. It supports images, rich-text, attachable documents and audio-notes. It even lets me scan receipts, bills and any kinds of documents and refines them to look like professionally scanned copies.&lt;/p&gt;
+
+&lt;p&gt;Evernote&amp;rsquo;s sync has grown to be reliable. It had its dark days and slip-ups but it&amp;rsquo;s matured over time. I used Evernote 3 years ago and loved it then. I have restarted using it for business and I love its collaboration capabilities.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;We at Octal use it for sharing walkthroughs, tutorials and visual guides, of which there are many in our line of programming and hardware tinkering.&lt;/strong&gt; We share screenshots, annotate them with their tool &lt;a href=&quot;https://evernote.com/skitch/?utm_source=interspire&quot;&gt;Skitch&lt;/a&gt; and even scan copies of paper and convert them to notes (even this article started its draft from Evernote).&lt;/p&gt;
+
+&lt;p&gt;There&amp;rsquo;s really a lot Evernote can do and to their credit, it&amp;rsquo;s completely free to use and your usage will most likely permit you to stay within their free limits and enjoy the service (ours does). Full marks here to Evernote.&lt;/p&gt;
+
+&lt;a name=&quot;Cloud.Storage&quot;&gt;&lt;/a&gt;
+&lt;h2&gt;Cloud Storage&lt;/h2&gt;
+
+&lt;p&gt;Since I pay for Google Apps, I use &lt;a href=&quot;http://www.google.com/drive&quot;&gt;Google Drive&lt;/a&gt; now. I used Dropbox for a long time but it doesn&amp;rsquo;t match the feature-set of Google Drive. In that, &lt;strong&gt;Google Drive has direct integration with Google Docs which renders iWork and Microsoft Office suites useless for me.&lt;/strong&gt; Since Google Docs can open and deal with any type of Office file format, I can get by with it just fine. Sharing and collaboration over the tight integration of Drive/Docs is also fast and efficient. It&amp;rsquo;s just so simple to keep everything under one roof. Offering barebones cloud storage is one thing and offering a slew of features around the files you store in that cloud storage is another. Check out the recent &lt;a href=&quot;https://gumroad.com/l/KxaU&quot;&gt;&amp;lsquo;Learning to Love Google Drive&amp;rsquo;&lt;/a&gt; screencasts series by Bradley Chambers.&lt;/p&gt;
+
+&lt;p&gt;Also, storage-wise, Google Drive is &lt;a href=&quot;http://www.cnet.com/news/onedrive-dropbox-google-drive-and-box-which-cloud-storage-service-is-right-for-you/&quot;&gt;cheaper than the competition&lt;/a&gt;. For $2/month, I get 100GB of storage. I use this storage for backup of my phone photographs and the rest of it is used by Gmail and other files and documents. The web interface is much better compared to Dropbox where Google Drive shows a lot of details about how and with whom the folders are shared and what the latest activity in them is. &lt;div class=&quot;box&quot;&gt;I know I was against using Google for a long time and I still don&amp;rsquo;t like the liberty they take in privacy invasion but I am willing to be a bit more lenient in return of a nicer feature-set that makes my work fast and easy.&lt;/div&gt;&lt;/p&gt;
+
+&lt;a name=&quot;Instant.Messaging&quot;&gt;&lt;/a&gt;
+&lt;h2&gt;Instant Messaging&lt;/h2&gt;
+
+&lt;p&gt;This is a big one. A very important one. In small companies and businesses with remote employees, a good robust IM solution is a must. We began with &lt;a href=&quot;http://slack.com&quot;&gt;Slack&lt;/a&gt; a few months ago. Slack is brilliant. There aren&amp;rsquo;t possibly enough great things being said about them. Slack offers so much alongside IM that it almost feels like a full communication system (it almost is). &lt;strong&gt;But our needs are slightly different (I mean at Octal).&lt;/strong&gt; First, our team is not that big. So we don&amp;rsquo;t really need a lot of channels and streams of chats. We need 1 or 2 at the most. &lt;strong&gt;Plus, Slack is a bit of an overkill feature-wise too.&lt;/strong&gt; It has snippet sharing, file sharing and a lot of inline integrations of different services within your typical chat. While these are good, they do become limiting once you start hitting the 2GB free storage limit (it happened quicker for us than we thought it would).&lt;/p&gt;
+
+&lt;p&gt;In came &lt;a href=&quot;http://telegram.org&quot;&gt;Telegram&lt;/a&gt;. With a userbase in the range of 100 million, it&amp;rsquo;s growing faster than ever.&lt;/p&gt;
+
+&lt;div class=&quot;aside&quot;&gt;Telegram is free, fast, super-secure, multi-platform, allows attachments of any size, has username support and is overall kickass.&lt;/div&gt;
+
+
+&lt;p&gt;When I used it for the first time a year ago, I instantly fell in love with it. We use it for our personal and professional conversations nowadays and it&amp;rsquo;s almost perfect. It has stable and very mature desktop and mobile clients. We recommend it whole-heartedly.&lt;/p&gt;
+
+&lt;a name=&quot;To-do.Manager&quot;&gt;&lt;/a&gt;
+&lt;h2&gt;To-do Manager&lt;/h2&gt;
+
+&lt;p&gt;How will we get any work done without these? Unless you&amp;rsquo;re a zen-master capable of remembering everything, you need one of these.&lt;/p&gt;
+
+&lt;p&gt;There are similar requirements here as mentioned above with the Notes app - syncing, effective collaboration, multi-platform apps, simplicity and speed. Tools like &lt;a href=&quot;https://www.omnigroup.com/omnifocus&quot;&gt;OmniFocus&lt;/a&gt; and &lt;a href=&quot;https://culturedcode.com/things/&quot;&gt;Things&lt;/a&gt; are really great for personal productivity. But they don&amp;rsquo;t allow shared tasks and collaboration.&lt;/p&gt;
+
+&lt;p&gt;At startups and businesses, we need solid task-based collaboration. We narrowed down on 2 choices: &lt;a href=&quot;http://todoist.com&quot;&gt;Todoist&lt;/a&gt; and &lt;a href=&quot;http://wunderlist.com&quot;&gt;Wunderlist&lt;/a&gt;. Both are great and have almost identical feature-sets. We chose Todoist since it&amp;rsquo;s the one we felt more familiar and comfortable with. Plus it&amp;rsquo;s cheaper on the pro subscription as well while offering the same functions. &lt;strong&gt;I really like the all-white interface of Todoist and the productivity-zen-like feeling it exudes.&lt;/strong&gt; Minimalism is really at work here.&lt;/p&gt;
+
+&lt;p&gt;Make no mistake though with the word minimalism being used for Todoist. It&amp;rsquo;s a very extensible fully-blown to-do management system.&lt;/p&gt;
+
+&lt;div class=&quot;aside&quot;&gt;With subtasks, notes, reminders, contexts, shared lists and file attachments, Todoist offers the right amount of feature-richness.&lt;/div&gt;
+
+
+
+
+&lt;div class=&quot;box&quot;&gt;&lt;b&gt;Worth noting:&lt;/b&gt; Task management on mobile is very important nowadays. Having a carefully thought-out iOS/Android app is a pre-requisite for any well-made to-do app. We rejected &lt;a href=&quot;http://trello.com&quot;&gt;Trello&lt;/a&gt;, &lt;a href=&quot;http://asana.com&quot;&gt;Asana&lt;/a&gt; and &lt;a href=&quot;http://basecamp.com&quot;&gt;Basecamp&lt;/a&gt; for the same reason. They are great for a more outline-based project management but they lack serious on-the-go capability on mobile which is important to us.&lt;/div&gt;
+
+
+&lt;a name=&quot;Miscellaneous&quot;&gt;&lt;/a&gt;
+&lt;h2&gt;Miscellaneous&lt;/h2&gt;
+
+&lt;p&gt;Now I will list some services that are essential in my daily work. There are always alternatives available and sometimes they may suit you better. But these are my favourites.&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&quot;http://pinboard.in&quot;&gt;Pinboard&lt;/a&gt;: The best bookmark-manager out there. It has an amazing API, iOS apps and tagging/archiving support.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&quot;http://1password.com&quot;&gt;1Password&lt;/a&gt;: The best password generator and manager out there. Nowadays it does way more than passwords though. &lt;strong&gt;Bank accounts, driving licenses, credit cards, identity cards, server information, software licenses, encrypted notes and a lot more.&lt;/strong&gt; It&amp;rsquo;s the everything solution you need for everything secret you want to keep.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&quot;http://www.noodlesoft.com/hazel.php&quot;&gt;Hazel&lt;/a&gt;: The best file-automator for your Mac OS X. It&amp;rsquo;s almost like an obedient butler acting on a set of rules you defined to organise the files and folders around your Mac magically.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&quot;http://hover.com&quot;&gt;Hover&lt;/a&gt;: The &lt;strong&gt;best&lt;/strong&gt; domain registrar out there. There isn&amp;rsquo;t a better one. They&amp;rsquo;re Canadian for God&amp;rsquo;s sake.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&quot;http://digitalocean.com&quot;&gt;Digital Ocean&lt;/a&gt;: The best hosting provider out there. There isn&amp;rsquo;t a cheaper one. They provide the best SSD servers for cheap. Try them!&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&quot;http://bitbucket.org&quot;&gt;Bitbucket&lt;/a&gt;: I&amp;rsquo;ve no particular reason to choose Bitbucket over GitHub but for the support of unlimited private repositories that Bitbucket provides. GitHub is equally good to host public projects.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&quot;http://www.shiftyjelly.com/pocketcasts&quot;&gt;Pocket Casts&lt;/a&gt;: I listen to podcasts a lot - almost always in the car. Pocket Casts is the best all-in-one solution to manage your subscriptions and listen to them elegantly.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&quot;http://panic.com/transmit&quot;&gt;Transmit&lt;/a&gt;: We do have to resort to FTP for certain development and server tasks. Transmit by Panic is the best FTP client for Mac OS X (and now iOS too). Its &lt;strong&gt;Sync&lt;/strong&gt; feature is the killer deal.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&quot;https://multibit.org&quot;&gt;Multibit&lt;/a&gt;: A very good Bitcoin wallet for desktop. I use it on the Mac and it&amp;rsquo;s quite straightforward to setup and use - recommended.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&quot;http://dayoneapp.com&quot;&gt;Day One&lt;/a&gt;: A great app for writing daily journal/diary of your life&amp;rsquo;s best moments. It supports images, location and weather too. It&amp;rsquo;s perfect for remembering stuff and writing in general and gets more and more valuable over time. It&amp;rsquo;s the app that has given me the most satisfaction from all the cross-platform apps I have bought.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&quot;https://www.apple.com/ios/whats-new/health/&quot;&gt;Health&lt;/a&gt;: I value data-portability. I had been using Jawbone but that wouldn&amp;rsquo;t be good in the long run since I wouldn&amp;rsquo;t be able to get that years worth of data out of Jawbone system. It makes much more sense to track and measure data with the reliable platform-native iOS Health app. This way, I can always have this data safe no matter what app I choose to visualise it with.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&quot;http://atom.io&quot;&gt;Atom&lt;/a&gt;: Well, Sublime Text is really good. I love it. But as I mentioned at the start of this article, just to feed my enthusiasm for new tools, I tried Atom code-editor from GitHub and have liked it ever since. It&amp;rsquo;s hackable to suit your needs any way you please. In a lot of ways, it&amp;rsquo;s identical to Sublime Text. I plan to stick with Atom for now.&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+
+&lt;hr /&gt;
+
+&lt;p&gt;Okay, so this was my longest-ever article discussing about all my tools and apps (it&amp;rsquo;s &lt;a href=&quot;http://nanowrimo.org&quot;&gt;NaNoWriMo&lt;/a&gt; so I can pride myself for the word-count). I made sure I did&amp;rsquo;t miss any essential ones. I hope you can derive some value out of it by trying some of the things I mentioned above. They will definitely help you for the good reasons I discussed.&lt;/p&gt;
+
+&lt;p&gt;Do share your views and opinions/experiences if any, over email (hardik@hardik.org).&lt;/p&gt;
+</description>
+				<pubDate>Tue, 11 Nov 2014 00:00:00 +0530</pubDate>
+				<link>/blog/my-tool-stack</link>
+				<guid isPermaLink="true">/blog/my-tool-stack</guid>
+			</item>
+		
+			<item>
+				<title>Spark Core</title>
+				<description>&lt;p&gt;For the uninitiated, &lt;a href=&quot;http://spark.io&quot;&gt;Spark Core&lt;/a&gt; is a wifi-enabled programmable microcontroller board and the first of its kind that comes pre-compatible with web-connectivity and a JavaScript programmability through a library core. It&amp;rsquo;s equipped with 8 digital IO and 8 analog IO pins.&lt;/p&gt;
+
+&lt;p&gt;We at Octal, ordered 2 of them for a couple of upcoming projects and research. It was quite a chore to get them through the Indian customs since being equipped with &lt;strong&gt;wireless chip antennas&lt;/strong&gt; is something that raises all kinds of suspicions. I managed to get the boards in my hands after a month-long quibble. If you&amp;rsquo;re ordering them, make a note to get them sent through a courier service (e.g. DHL, FedEx) instead of the postal route.&lt;/p&gt;
+
+&lt;a name=&quot;The.board&quot;&gt;&lt;/a&gt;
+&lt;h2&gt;The board&lt;/h2&gt;
+
+&lt;p&gt;&lt;figure class=&quot;normalised&quot;&gt;
+&lt;a href=&quot;/images/sparkio.png&quot;
+   class=&quot;fresco&quot;
+   data-fresco-caption=&quot;Spark Core connected to computer via USB&quot;&gt;&lt;img src=&quot;/images/sparkio.png&quot;&gt;&lt;/a&gt;
+&lt;figcaption&gt;Spark Core connected to computer via USB&lt;/figcaption&gt;
+&lt;/figure&gt;&lt;/p&gt;
+
+&lt;p&gt;This is a simple Spark Core device with &lt;strong&gt;8 digital and 8 analog pins.&lt;/strong&gt; Pretty simple stuff so far. The chip on the top you see is a wifi antenna that gives it a capability to connect to the network. That&amp;rsquo;s the best part. These are networked IOs and can be governed via physically distant switches/controls.&lt;/p&gt;
+
+&lt;p&gt;So I connected the Spark Core with the USB and downloaded the Spark Core app on the iPhone. It took about 2 minutes to configure the iOS app over the wifi network and it immediately identified the Spark Core that was waiting on the network. Voila!&lt;/p&gt;
+
+&lt;a name=&quot;Controlling.IOs.wirelessly&quot;&gt;&lt;/a&gt;
+&lt;h2&gt;Controlling IOs wirelessly&lt;/h2&gt;
+
+&lt;p&gt;It happened. Check the images below.&lt;/p&gt;
+
+&lt;ul class=&quot;rig columns-2&quot;&gt;
+    &lt;li&gt;
+&lt;figure&gt;
+&lt;a href=&quot;/images/spark-ios.png&quot;
+    class=&quot;fresco&quot; data-fresco-group=&quot;one&quot;
+    data-fresco-caption=&quot;Turning on the D7 pin with a tap on the Spark Core app...&quot;&gt;&lt;img src=&quot;/images/spark-ios.png&quot;&gt;&lt;/a&gt;
+&lt;figcaption&gt;Turning on the D7 pin with a tap on the Spark Core app...&lt;/figcaption&gt;
+&lt;/figure&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+&lt;figure&gt;
+&lt;a href=&quot;/images/spark-on-annotated.png&quot;
+    class=&quot;fresco&quot; data-fresco-group=&quot;one&quot;
+    data-fresco-caption=&quot;...and seeing the D7 LED turn on in near real-time&quot;&gt;&lt;img src=&quot;/images/spark-on-annotated.png&quot;&gt;&lt;/a&gt;
+&lt;figcaption&gt;...and seeing the D7 LED turn on in near real-time&lt;/figcaption&gt;
+&lt;/figure&gt;
+    &lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;p&gt;Nerdgasm anyone? This is really game-changing. Mind you, there&amp;rsquo;s no connection between the phone and the chip apart from the wifi layer and the transmission of the signals happens through the &lt;a href=&quot;http://docs.spark.io/api/&quot;&gt;Spark Cloud API&lt;/a&gt; with proper authorization. Spark Core controller can be operated wirelessly meaning that you have your Input/Output pins accessible from &lt;strong&gt;Anywhere (with a capital A).&lt;/strong&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;&lt;p&gt;I know you could do this with an &lt;a href=&quot;http://arduino.cc&quot;&gt;Arduino&lt;/a&gt; and a wifi-shield and nearly any other networked microcontroller, &lt;strong&gt;but the ease and simplicity that Spark Core provides is above everything.&lt;/strong&gt;&lt;/p&gt;&lt;/blockquote&gt;
+
+&lt;p&gt;There&amp;rsquo;s barely any setup required and you are good to go in no time.&lt;/p&gt;
+
+&lt;p&gt;The app is however rather limited in functionality in that you can at most flick the digital pins high and low and play around a bit with the analog pins, but nothing more than that. Anything fancy and you will have to design your custom code and upload it on the Spark Core.&lt;/p&gt;
+
+&lt;p&gt;And Spark Core is taking a huge leap in that direction by putting a cheap and easy-to-use controller in people&amp;rsquo;s hands. I am a big proponent of simple systems that just work out-of-the-box and Spark Core hits the spot perfectly.&lt;div class=&quot;aside&quot;&gt;The future is networked interfaces.&lt;/div&gt;&lt;/p&gt;
+
+&lt;p&gt;I cannot wait to build things with this. Uploading custom codes is the next frontier. I will share more soon.&lt;/p&gt;
+</description>
+				<pubDate>Wed, 05 Nov 2014 00:00:00 +0530</pubDate>
+				<link>/blog/spark-wireless</link>
+				<guid isPermaLink="true">/blog/spark-wireless</guid>
+			</item>
+		
+			<item>
+				<title>2 Factor Authentication is Vulnerable Too</title>
+				<description>&lt;p&gt;So in the &lt;a href=&quot;http://hardik.org/blog/two-factor-authentication/&quot;&gt;last article&lt;/a&gt;, I vouched about enabling 2FA on all your online accounts and services. Turns out, it&amp;rsquo;s easy to game that as well.&lt;/p&gt;
+
+&lt;p&gt;Follow the link in the title and read about how the hackers gamed the 2FA via &lt;strong&gt;cellular service provider&lt;/strong&gt; through call-forwarding and gained access to the auth-codes that were being sent through SMS on the victim&amp;rsquo;s phone.&lt;/p&gt;
+
+&lt;div class=&quot;aside&quot;&gt;However, this is not a failure of 2FA as a concept but it shows more of a problem in the method of using 2FA.&lt;/div&gt;
+
+
+&lt;p&gt;It&amp;rsquo;s good to know that cell-providers can also play a part in the hack if the hackers really want something.&lt;/p&gt;
+
+&lt;p&gt;A quick-fix here is to &lt;strong&gt;use an &lt;a href=&quot;https://support.google.com/accounts/answer/1066447?hl=en&quot;&gt;Authenticator app&lt;/a&gt; instead of SMS codes. At least there&amp;rsquo;s one less possible point-of-failure involved.&lt;/strong&gt;&lt;/p&gt;
+</description>
+				<pubDate>Sat, 01 Nov 2014 00:00:00 +0530</pubDate>
+				<link>/blog/two-factor-problem</link>
+				<guid isPermaLink="true">/blog/two-factor-problem</guid>
+			</item>
+		
+	</channel>
+</rss>

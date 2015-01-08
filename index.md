@@ -5,16 +5,20 @@ title: Hardik Pandya
 
 <div class="bannered">
 <div class="bio">
-<h3 class="main-text logo-spark">
-  <img src="/images/hp.png" class = "title-image"/>
+<h3 class="main-text">
+  <img src="/images/main.png" class = "title-image"/>
 </h3>
 <!--<h3 class="main-text-subtitle" style=""><span style="color: #556B87;">Co</span>founder @ <a href="http://theoctal.com">Octal Consulting</a>.</h3>-->
 <h3 class="main-text">
-  Hardik Pandya
+  Shachi Pandya
 </h3>
-<div id = "rotated-roles"><h3 class="main-text-subtitle" style = "color: #606c78;">
-  Programmer • Writer • Interface &amp; Web Designer
+<div><h3 class="main-text-subtitle">
+  Traditional Indian Wear and Western Wear Designer
 </h3></div>
+
+<center><a href="{{ site.url }}/collections" class = "collections-button">See Collections</a></center>
+
+
 <!--<h3 class="main-text-subtitle-love2" style="">I craft front-end layouts and interfaces for web-applications and hardware/software interactive automation products. I design automation software for niché industrial applications.</h3>-->
 
 <!--<h2 class="main-text-subtext" style=""><span class="amp">&amp;</span></h2>
