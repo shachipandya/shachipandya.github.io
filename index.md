@@ -15,6 +15,12 @@ title: Hardik Pandya
 <div><h3 class="main-text-subtitle">
   Award-winning Traditional Indian Wear and Western Wear Designer
 </h3></div>
+<div id="rotated-roles"><p style="text-align: center; font-weight: normal !important;
+  letter-spacing: 0.05em !important;
+  font-size: 1.05rem !important;
+  color: #fff !important;">
+  Designer Kurtis
+</p></div>
 
 <center><a href="{{ site.url }}/chaniya-choli" class = "collections-button">See Collection</a></center>
 
