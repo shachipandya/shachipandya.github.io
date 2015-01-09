@@ -13,7 +13,7 @@ title: Hardik Pandya
   Shachi Pandya
 </h3>
 <div><h3 class="main-text-subtitle">
-  Traditional Indian Wear and Western Wear Designer
+  Award-winning Traditional Indian Wear and Western Wear Designer
 </h3></div>
 
 <center><a href="{{ site.url }}/collection-1" class = "collections-button">See Collections</a></center>
