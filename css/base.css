@@ -102,7 +102,7 @@ font-size: 18px;
 line-height: 1.6;
 color: #cecece;
 margin: 0 auto;
-background-color: #282931;
+background-color: #253145;
 }
 
 h5 {
@@ -445,6 +445,7 @@ font-family: "FreightText","Georgia",Georgia,Verdana,Helvetica,sans-serif;
 font-weight: normal !important;
 color: #f5f5f5;
 margin: 0;
+text-align: center;
 letter-spacing: 0.01em;
 }
 
@@ -457,7 +458,6 @@ margin-top: 1.5rem;
 
 .title-image {
 width: 17%!important;
-background-color: #282931;
 margin-left: 0%!important;
 display: inline!important;
 margin-bottom: 0rem!important;

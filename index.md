@@ -16,7 +16,7 @@ title: Hardik Pandya
   Award-winning Traditional Indian Wear and Western Wear Designer
 </h3></div>
 
-<center><a href="{{ site.url }}/collection-1" class = "collections-button">See Collections</a></center>
+<center><a href="{{ site.url }}/chaniya-choli" class = "collections-button">See Collection</a></center>
 
 
 <!--<h3 class="main-text-subtitle-love2" style="">I craft front-end layouts and interfaces for web-applications and hardware/software interactive automation products. I design automation software for niché industrial applications.</h3>-->

@@ -4,24 +4,24 @@ title: Collection-2
 collectionTwo: true
 ---
 
-# Traditional Indian Wear (Second Part)
+## New Designs
 
 <br>
 <div class="disclaimer">(Click to enlarge photos)</div>
 <ul class="rig columns-2">
   <li>
     <figure>
-      <a href="{{ site.url }}/images/chaniya-choli/21.jpg"
+      <a href="{{ site.url }}/images/collection-2/1.jpg"
       class="fresco" data-fresco-group="one"
-      data-fresco-caption=""><img src="{{ site.url }}/images/chaniya-choli/21.jpg"></a>
+      data-fresco-caption=""><img src="{{ site.url }}/images/collection-2/1.jpg"></a>
       <figcaption></figcaption>
     </figure>
   </li>
   <li>
     <figure>
-      <a href="{{ site.url }}/images/chaniya-choli/22.jpg"
+      <a href="{{ site.url }}/images/collection-2/2.jpg"
       class="fresco" data-fresco-group="one"
-      data-fresco-caption=""><img src="{{ site.url }}/images/chaniya-choli/22.jpg"></a>
+      data-fresco-caption=""><img src="{{ site.url }}/images/collection-2/2.jpg"></a>
       <figcaption></figcaption>
     </figure>
   </li>
@@ -30,17 +30,17 @@ collectionTwo: true
 <ul class="rig columns-2">
   <li>
     <figure>
-      <a href="{{ site.url }}/images/chaniya-choli/23.jpg"
+      <a href="{{ site.url }}/images/collection-2/3.jpg"
       class="fresco" data-fresco-group="one"
-      data-fresco-caption=""><img src="{{ site.url }}/images/chaniya-choli/23.jpg"></a>
+      data-fresco-caption=""><img src="{{ site.url }}/images/collection-2/3.jpg"></a>
       <figcaption></figcaption>
     </figure>
   </li>
   <li>
     <figure>
-      <a href="{{ site.url }}/images/chaniya-choli/24.jpg"
+      <a href="{{ site.url }}/images/collection-2/4.jpg"
       class="fresco" data-fresco-group="one"
-      data-fresco-caption=""><img src="{{ site.url }}/images/chaniya-choli/24.jpg"></a>
+      data-fresco-caption=""><img src="{{ site.url }}/images/collection-2/4.jpg"></a>
       <figcaption></figcaption>
     </figure>
   </li>
@@ -49,17 +49,17 @@ collectionTwo: true
 <ul class="rig columns-2">
   <li>
     <figure>
-      <a href="{{ site.url }}/images/chaniya-choli/25.jpg"
+      <a href="{{ site.url }}/images/collection-2/5a.jpg"
       class="fresco" data-fresco-group="one"
-      data-fresco-caption=""><img src="{{ site.url }}/images/chaniya-choli/25.jpg"></a>
+      data-fresco-caption=""><img src="{{ site.url }}/images/collection-2/5a.jpg"></a>
       <figcaption></figcaption>
     </figure>
   </li>
   <li>
     <figure>
-      <a href="{{ site.url }}/images/chaniya-choli/26.jpg"
+      <a href="{{ site.url }}/images/collection-2/5b.jpg"
       class="fresco" data-fresco-group="one"
-      data-fresco-caption=""><img src="{{ site.url }}/images/chaniya-choli/26.jpg"></a>
+      data-fresco-caption=""><img src="{{ site.url }}/images/collection-2/5b.jpg"></a>
       <figcaption></figcaption>
     </figure>
   </li>
@@ -68,17 +68,17 @@ collectionTwo: true
 <ul class="rig columns-2">
   <li>
     <figure>
-      <a href="{{ site.url }}/images/chaniya-choli/27.jpg"
+      <a href="{{ site.url }}/images/collection-2/6.jpg"
       class="fresco" data-fresco-group="one"
-      data-fresco-caption=""><img src="{{ site.url }}/images/chaniya-choli/27.jpg"></a>
+      data-fresco-caption=""><img src="{{ site.url }}/images/collection-2/6.jpg"></a>
       <figcaption></figcaption>
     </figure>
   </li>
   <li>
     <figure>
-      <a href="{{ site.url }}/images/chaniya-choli/28.jpg"
+      <a href="{{ site.url }}/images/collection-2/7.jpg"
       class="fresco" data-fresco-group="one"
-      data-fresco-caption=""><img src="{{ site.url }}/images/chaniya-choli/28.jpg"></a>
+      data-fresco-caption=""><img src="{{ site.url }}/images/collection-2/7.jpg"></a>
       <figcaption></figcaption>
     </figure>
   </li>
@@ -87,17 +87,17 @@ collectionTwo: true
 <ul class="rig columns-2">
   <li>
     <figure>
-      <a href="{{ site.url }}/images/chaniya-choli/29.jpg"
+      <a href="{{ site.url }}/images/collection-2/8.jpg"
       class="fresco" data-fresco-group="one"
-      data-fresco-caption=""><img src="{{ site.url }}/images/chaniya-choli/29.jpg"></a>
+      data-fresco-caption=""><img src="{{ site.url }}/images/collection-2/8.jpg"></a>
       <figcaption></figcaption>
     </figure>
   </li>
   <li>
     <figure>
-      <a href="{{ site.url }}/images/chaniya-choli/30.jpg"
+      <a href="{{ site.url }}/images/collection-2/9.jpg"
       class="fresco" data-fresco-group="one"
-      data-fresco-caption=""><img src="{{ site.url }}/images/chaniya-choli/30.jpg"></a>
+      data-fresco-caption=""><img src="{{ site.url }}/images/collection-2/9.jpg"></a>
       <figcaption></figcaption>
     </figure>
   </li>
@@ -106,17 +106,17 @@ collectionTwo: true
 <ul class="rig columns-2">
   <li>
     <figure>
-      <a href="{{ site.url }}/images/chaniya-choli/31.jpg"
+      <a href="{{ site.url }}/images/collection-2/10.jpg"
       class="fresco" data-fresco-group="one"
-      data-fresco-caption=""><img src="{{ site.url }}/images/chaniya-choli/31.jpg"></a>
+      data-fresco-caption=""><img src="{{ site.url }}/images/collection-2/10.jpg"></a>
       <figcaption></figcaption>
     </figure>
   </li>
   <li>
     <figure>
-      <a href="{{ site.url }}/images/chaniya-choli/32.jpg"
+      <a href="{{ site.url }}/images/collection-2/11.jpg"
       class="fresco" data-fresco-group="one"
-      data-fresco-caption=""><img src="{{ site.url }}/images/chaniya-choli/32.jpg"></a>
+      data-fresco-caption=""><img src="{{ site.url }}/images/collection-2/11.jpg"></a>
       <figcaption></figcaption>
     </figure>
   </li>
@@ -125,17 +125,17 @@ collectionTwo: true
 <ul class="rig columns-2">
   <li>
     <figure>
-      <a href="{{ site.url }}/images/chaniya-choli/33.jpg"
+      <a href="{{ site.url }}/images/collection-2/12.jpg"
       class="fresco" data-fresco-group="one"
-      data-fresco-caption=""><img src="{{ site.url }}/images/chaniya-choli/33.jpg"></a>
+      data-fresco-caption=""><img src="{{ site.url }}/images/collection-2/12.jpg"></a>
       <figcaption></figcaption>
     </figure>
   </li>
   <li>
     <figure>
-      <a href="{{ site.url }}/images/chaniya-choli/34.jpg"
+      <a href="{{ site.url }}/images/collection-2/13.jpg"
       class="fresco" data-fresco-group="one"
-      data-fresco-caption=""><img src="{{ site.url }}/images/chaniya-choli/34.jpg"></a>
+      data-fresco-caption=""><img src="{{ site.url }}/images/collection-2/13.jpg"></a>
       <figcaption></figcaption>
     </figure>
   </li>
@@ -144,67 +144,10 @@ collectionTwo: true
 <ul class="rig columns-2">
   <li>
     <figure>
-      <a href="{{ site.url }}/images/chaniya-choli/35.jpg"
+      <a href="{{ site.url }}/images/collection-2/14.jpg"
       class="fresco" data-fresco-group="one"
-      data-fresco-caption=""><img src="{{ site.url }}/images/chaniya-choli/35.jpg"></a>
+      data-fresco-caption=""><img src="{{ site.url }}/images/collection-2/14.jpg"></a>
       <figcaption></figcaption>
     </figure>
   </li>
-  <li>
-    <figure>
-      <a href="{{ site.url }}/images/chaniya-choli/36.jpg"
-      class="fresco" data-fresco-group="one"
-      data-fresco-caption=""><img src="{{ site.url }}/images/chaniya-choli/36.jpg"></a>
-      <figcaption></figcaption>
-    </figure>
-  </li>
-</ul>
-
-<ul class="rig columns-2">
-  <li>
-    <figure>
-      <a href="{{ site.url }}/images/chaniya-choli/37.jpg"
-      class="fresco" data-fresco-group="one"
-      data-fresco-caption=""><img src="{{ site.url }}/images/chaniya-choli/37.jpg"></a>
-      <figcaption></figcaption>
-    </figure>
-  </li>
-  <li>
-    <figure>
-      <a href="{{ site.url }}/images/chaniya-choli/38.jpg"
-      class="fresco" data-fresco-group="one"
-      data-fresco-caption=""><img src="{{ site.url }}/images/chaniya-choli/38.jpg"></a>
-      <figcaption></figcaption>
-    </figure>
-  </li>
-</ul>
-
-<ul class="rig columns-2">
-  <li>
-    <figure>
-      <a href="{{ site.url }}/images/chaniya-choli/39.jpg"
-      class="fresco" data-fresco-group="one"
-      data-fresco-caption=""><img src="{{ site.url }}/images/chaniya-choli/39.jpg"></a>
-      <figcaption></figcaption>
-    </figure>
-  </li>
-  <li>
-    <figure>
-      <a href="{{ site.url }}/images/chaniya-choli/40.jpg"
-      class="fresco" data-fresco-group="one"
-      data-fresco-caption=""><img src="{{ site.url }}/images/chaniya-choli/40.jpg"></a>
-      <figcaption></figcaption>
-    </figure>
-  </li>
-</ul>
-
-<ul class="rig columns-2">
-<li>
-<figure>
-<a href="{{ site.url }}/images/chaniya-choli/41.jpg"
-class="fresco" data-fresco-group="one"
-data-fresco-caption=""><img src="{{ site.url }}/images/chaniya-choli/41.jpg"></a>
-<figcaption></figcaption>
-</figure>
-</li>
 </ul>
