@@ -404,9 +404,12 @@ text-align: center;
 .collections-button {
   font-size: 115% !important;
   background-color: #4A4E70;
+  font-weight: normal !important;
+  letter-spacing: 0.09em !important;
   color: #fefefe !important;
   font-family: "FreightText", Helvetica, sans-serif;
   text-decoration: none !important;
+  text-transform: uppercase;
   -webkit-border-radius:  8px;
   -moz-border-radius: 8px;
   border-radius: 8px;
