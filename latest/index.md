@@ -6,6 +6,8 @@ latest: true
 
 ## SummerX 2016
 
+<img src="/images/sale.svg" class = "inline-icon-lg opaque">
+
 SummerX is my latest work - it's what I've been busy with for the last 4 months. These 10 designs are perfect for various occasions throughout the summer.
 
 Now for sale with free shipping - Contact - <b style="color: #fefefe;">9998650102</b>.
@@ -15,14 +17,14 @@ Now for sale with free shipping - Contact - <b style="color: #fefefe;">999865010
 <ul class="rig columns-2">
 <li>
 <figure>
-<a href="{{ site.url }}/latest/aqua"   class="fresco" data-fresco-group="one"
+<a href="{{ site.url }}/images/latest/aqua/aqua-1.jpg"   class="fresco" data-fresco-group="one"
 data-fresco-caption=""><img src="{{ site.url }}/images/latest/aqua/aqua-1.jpg"></a>
 <figcaption class="visible">Aqua</figcaption>
 </figure>
 </li>
 <li>
 <figure>
-<a href="{{ site.url }}/latest/crimson"   class="fresco" data-fresco-group="one"
+<a href="{{ site.url }}/images/latest/crimson/crimson-1.jpg"   class="fresco" data-fresco-group="one"
 data-fresco-caption=""><img src="{{ site.url }}/images/latest/crimson/crimson-1.jpg"></a>
 <figcaption class="visible">Crimson</figcaption>
 </figure>

@@ -20,7 +20,7 @@ html {
 }
 body {
   margin: 0 auto;
-  background-color: #1B3156;
+  background-color: #1B3663;
   color: rgba(255, 255, 255, 0.6);
   font-size: 18px;
   line-height: 1.6;
@@ -53,6 +53,9 @@ h5 {
   margin: 16px 8px -12px 8px;
   width: 64px !important;
   opacity: 0.5;
+}
+.opaque {
+  opacity: 1.0 !important;
 }
 .main-text-plain {
   color: #383838 !important;
@@ -1227,7 +1230,7 @@ ul.rig figcaption.visible {
   position: relative;
   text-align: left;
   left: 0rem;
-  background: rgba(26,48,87,0.75);
+  background: rgba(25,53,100,0.75);
   width: auto;
   padding: 10px 14px 12px 12px;
   border-radius: 0px 3px 3px 0px;
