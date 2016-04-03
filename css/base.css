@@ -1,4 +1,3 @@
-
 @font-face {
   font-family: 'Neris';
   src: url("/assets/fonts/Neris.otf");
@@ -22,7 +21,7 @@ html {
 body {
   margin: 0 auto;
   background-color: #1B3156;
-  color: rgba(255,255,255,0.6);
+  color: rgba(255, 255, 255, 0.6);
   font-size: 18px;
   line-height: 1.6;
 }
@@ -140,7 +139,7 @@ footer, footer a {
   margin-top: 5vh;
   margin-bottom: 1rem!important;
   padding: .5rem 0 0.5rem;
-  color: rgba(255, 255,255,0.25);
+  color: rgba(255, 255, 255, 0.25);
   text-align: center;
   font-weight: normal;
   font-size: .8rem;
@@ -203,7 +202,7 @@ nav li {
 }
 nav li a {
   display: inline-block;
-  color: rgba(255,255,255,0.5);
+  color: rgba(255, 255, 255, 0.5);
   text-transform: uppercase;
   letter-spacing: .1rem!important;
   font-weight: normal;
@@ -282,7 +281,7 @@ nav li a:hover {
 }
 .disclaimer {
   margin: 0.5rem 0 1.2rem 0;
-  color: rgba(255,255,255,0.25);
+  color: rgba(255, 255, 255, 0.25);
   text-align: center;
   font-style: italic;
   font-size: .8rem;
@@ -340,21 +339,21 @@ h1 {
   font-family: "Neris", "Georgia", Georgia, Verdana, sans-serif;
 }
 .collections-button {
-    padding: 8px 36px 12px 36px;
-    border-top: 1px solid rgba(255,255,255,0.36);
-    border-bottom: 1px solid rgba(0,0,0,0.36);
-    -webkit-border-radius: 40px;
-    -moz-border-radius: 40px;
-    border-radius: 40px;
-    background-color: #18B380;
-    color: #fefefe !important;
-    text-align: center;
-    text-decoration: none !important;
-    /* text-transform: uppercase; */
-    /* letter-spacing: 0.09em !important; */
-    font-weight: normal !important;
-    /* font-size: 115% !important; */
-    font-family: "Neris", Helvetica, sans-serif;
+  padding: 8px 36px 12px 36px;
+  border-top: 1px solid rgba(255, 255, 255, 0.36);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.36);
+  -webkit-border-radius: 40px;
+  -moz-border-radius: 40px;
+  border-radius: 40px;
+  background-color: #18B380;
+  color: #fefefe !important;
+  text-align: center;
+  text-decoration: none !important;
+  /* text-transform: uppercase; */
+  /* letter-spacing: 0.09em !important; */
+  font-weight: normal !important;
+  /* font-size: 115% !important; */
+  font-family: "Neris", Helvetica, sans-serif;
 }
 .collections-button:hover {
   background-color: #15AB7A;
@@ -363,7 +362,7 @@ h1 {
 .main-text-subtitle {
   margin-top: .2rem!important;
   padding-bottom: 0!important;
-  color: rgba(255,255,255, 0.5) !important;
+  color: rgba(255, 255, 255, 0.5) !important;
   text-align: center;
   text-transform: none!important;
   font-weight: normal!important;
@@ -531,11 +530,15 @@ img.img-sm {
   opacity: 0.2;
 }
 .inverted {
-  -webkit-transform: rotate(180deg);     /* Chrome and other webkit browsers */
-  -moz-transform: rotate(180deg);        /* FF */
-  -o-transform: rotate(180deg);          /* Opera */
-  -ms-transform: rotate(180deg);         /* IE9 */
-  transform: rotate(180deg); 
+  -webkit-transform: rotate(180deg);
+  /* Chrome and other webkit browsers */
+  -moz-transform: rotate(180deg);
+  /* FF */
+  -o-transform: rotate(180deg);
+  /* Opera */
+  -ms-transform: rotate(180deg);
+  /* IE9 */
+  transform: rotate(180deg);
 }
 figure img {
   display: block;
@@ -666,7 +669,7 @@ code {
     margin-left: 39% !important;
     margin-bottom: 1.5rem !important;
     opacity: 0.2;
-}
+  }
   .title-image {
     margin-top: 11vh!important;
     width: 29%!important;
@@ -785,7 +788,6 @@ code {
     margin-left: 43%;
     opacity: 0.2;
   }
-
   ul.rig.columns-2 li {
     width: 50%;
   }
@@ -1202,9 +1204,33 @@ ul.rig figure {
 }
 ul.rig figcaption {
   margin-bottom: 0rem!important;
-  color: #788BA1;
+  display: none;
+  color: #FFFFFF;
   font-weight: bold;
   font-size: .75rem;
+  top: -2.75rem;
+  position: relative;
+  text-align: left;
+  left: 0rem;
+  background: rgba(0, 0, 0, 0.75);
+  width: auto;
+  padding: 10px 14px 12px 12px;
+  border-radius: 0px 3px 3px 0px;
+}
+ul.rig figcaption.visible {
+  margin-bottom: 0rem!important;
+  display: inline-block;
+  color: #FFFFFF;
+  font-weight: bold;
+  font-size: .75rem;
+  top: -2.75rem;
+  position: relative;
+  text-align: left;
+  left: 0rem;
+  background: rgba(0, 0, 0, 0.75);
+  width: auto;
+  padding: 10px 14px 12px 12px;
+  border-radius: 0px 3px 3px 0px;
 }
 ul.rig li img {
   margin: 0 0 5px;
@@ -1238,11 +1264,10 @@ ul.rig.columns-5 li {
     font-size: 90%;
   }
   img.img-sm {
-    width: 25%  !important;
+    width: 25% !important;
     margin-left: 37.5% !important;
     opacity: 0.2;
   }
-
   .main-text {
     margin-left: 0%!important;
     width: 100%!important;

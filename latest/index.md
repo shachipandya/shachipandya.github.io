@@ -10,19 +10,21 @@ SummerX is my latest work - it's what I've been busy with for the last 4 months.
 
 Now for sale with free shipping - Contact - 9998650102.
 
-<div class="disclaimer">(Click each set to see more photos)</div>
+<!-- <div class="disclaimer">(Click each set to see more photos)</div> -->
 
 <ul class="rig columns-2">
 <li>
 <figure>
-<a href="{{ site.url }}/latest/aqua"><img src="{{ site.url }}/images/latest/aqua/aqua-1.jpg"></a>
-<figcaption></figcaption>
+<a href="{{ site.url }}/latest/aqua"   class="fresco" data-fresco-group="one"
+data-fresco-caption=""><img src="{{ site.url }}/images/latest/aqua/aqua-1.jpg"></a>
+<figcaption class="visible">Aqua</figcaption>
 </figure>
 </li>
 <li>
 <figure>
-<a href="{{ site.url }}/latest/crimson"><img src="{{ site.url }}/images/latest/crimson/crimson-1.jpg"></a>
-<figcaption></figcaption>
+<a href="{{ site.url }}/latest/crimson"   class="fresco" data-fresco-group="one"
+data-fresco-caption=""><img src="{{ site.url }}/images/latest/crimson/crimson-1.jpg"></a>
+<figcaption class="visible">Crimson</figcaption>
 </figure>
 </li>
 </ul>
@@ -32,30 +34,16 @@ Now for sale with free shipping - Contact - 9998650102.
 <ul class="rig columns-2">
 <li>
 <figure>
-<a href="{{ site.url }}/latest/gothic"><img src="{{ site.url }}/images/latest/gothic/gothic-1.jpg"></a>
-<figcaption></figcaption>
+<a href="{{ site.url }}/images/latest/gothic/gothic-1.jpg"   class="fresco" data-fresco-group="one"
+data-fresco-caption=""><img src="{{ site.url }}/images/latest/gothic/gothic-1.jpg"></a>
+<figcaption class="visible">Gothic</figcaption>
 </figure>
 </li>
 <li>
 <figure>
-<a href="{{ site.url }}/latest/moderna"><img src="{{ site.url }}/images/latest/moderna/moderna-1.jpg"></a>
-<figcaption></figcaption>
-</figure>
-</li>
-</ul>
-
-
-<ul class="rig columns-2">
-<li>
-<figure>
-<a href="{{ site.url }}/latest/peacock"><img src="{{ site.url }}/images/latest/peacock/peacock-1.jpg"></a>
-<figcaption></figcaption>
-</figure>
-</li>
-<li>
-<figure>
-<a href="{{ site.url }}/latest/pickles"><img src="{{ site.url }}/images/latest/pickles/pickles-1.jpg"></a>
-<figcaption></figcaption>
+<a href="{{ site.url }}/images/latest/moderna/moderna-1.jpg"   class="fresco" data-fresco-group="one"
+data-fresco-caption=""><img src="{{ site.url }}/images/latest/moderna/moderna-1.jpg"></a>
+<figcaption class="visible">Moderna</figcaption>
 </figure>
 </li>
 </ul>
@@ -64,14 +52,16 @@ Now for sale with free shipping - Contact - 9998650102.
 <ul class="rig columns-2">
 <li>
 <figure>
-<a href="{{ site.url }}/latest/pistachio"><img src="{{ site.url }}/images/latest/pistachio/pistachio-1.jpg"></a>
-<figcaption></figcaption>
+<a href="{{ site.url }}/images/latest/peacock/peacock-1.jpg"   class="fresco" data-fresco-group="one"
+data-fresco-caption=""><img src="{{ site.url }}/images/latest/peacock/peacock-1.jpg"></a>
+<figcaption class="visible">Peacock</figcaption>
 </figure>
 </li>
 <li>
 <figure>
-<a href="{{ site.url }}/latest/rainbow"><img src="{{ site.url }}/images/latest/rainbow/rainbow-1.jpg"></a>
-<figcaption></figcaption>
+<a href="{{ site.url }}/images/latest/pickles/pickles-1.jpg"   class="fresco" data-fresco-group="one"
+data-fresco-caption=""><img src="{{ site.url }}/images/latest/pickles/pickles-1.jpg"></a>
+<figcaption class="visible">Pickles</figcaption>
 </figure>
 </li>
 </ul>
@@ -80,14 +70,34 @@ Now for sale with free shipping - Contact - 9998650102.
 <ul class="rig columns-2">
 <li>
 <figure>
-<a href="{{ site.url }}/latest/violetta"><img src="{{ site.url }}/images/latest/violetta/violetta-1.jpg"></a>
-<figcaption></figcaption>
+<a href="{{ site.url }}/images/latest/pistachio/pistachio-1.jpg"   class="fresco" data-fresco-group="one"
+data-fresco-caption=""><img src="{{ site.url }}/images/latest/pistachio/pistachio-1.jpg"></a>
+<figcaption class="visible">Pistachio</figcaption>
 </figure>
 </li>
 <li>
 <figure>
-<a href="{{ site.url }}/latest/wavy"><img src="{{ site.url }}/images/latest/wavy/wavy-1.jpg"></a>
-<figcaption></figcaption>
+<a href="{{ site.url }}/images/latest/rainbow/rainbow-1.jpg"   class="fresco" data-fresco-group="one"
+data-fresco-caption=""><img src="{{ site.url }}/images/latest/rainbow/rainbow-1.jpg"></a>
+<figcaption class="visible">Rainbow</figcaption>
+</figure>
+</li>
+</ul>
+
+
+<ul class="rig columns-2">
+<li>
+<figure>
+<a href="{{ site.url }}/images/latest/violetta/violetta-1.jpg"   class="fresco" data-fresco-group="one"
+data-fresco-caption=""><img src="{{ site.url }}/images/latest/violetta/violetta-1.jpg"></a>
+<figcaption class="visible">Violetta</figcaption>
+</figure>
+</li>
+<li>
+<figure>
+<a href="{{ site.url }}/images/latest/wavy/wavy-1.jpg"   class="fresco" data-fresco-group="one"
+data-fresco-caption=""><img src="{{ site.url }}/images/latest/wavy/wavy-1.jpg"></a>
+<figcaption class="visible">Wavy</figcaption>
 </figure>
 </li>
 </ul>
