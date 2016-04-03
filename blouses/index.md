@@ -4,8 +4,8 @@ title: Blouse Designs
 blouses: true
 ---
 
-Check out the detailed photos of these designs.
-
+<h2>Blouses</h2>
+<img src="/images/soldout.svg" class = "inline-icon-lg"> 
 <div class="disclaimer">(Click each photo to enlarge it)</div>
 
 <ul class="rig columns-2">

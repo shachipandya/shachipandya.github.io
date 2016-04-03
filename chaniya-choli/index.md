@@ -4,13 +4,12 @@ title: Chaniya Choli
 chaniyacholi: true
 ---
 
-# Chaniya Choli Designs
+## Chaniya Choli
+<img src="/images/soldout.svg" class = "inline-icon-lg">
 
-My designs vary from client to client according to their requirements. I like to emphasize and pronounce contemporary Indian culture in my apparel designs. That's the reason my designs stand out from any other you may have seen.
+My designs vary from client to client according to their requirements. I like to pronounce contemporary Indian culture in my apparels. That's the reason my designs stand out from any others you see.
 
-Here are a few of my latest creations:
-
-<div class="disclaimer">(Click each photo to see more photos)</div>
+<div class="disclaimer">(Click each set to see more photos)</div>
 
 <ul class="rig columns-2">
 <li>

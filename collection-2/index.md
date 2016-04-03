@@ -5,8 +5,8 @@ collectionTwo: true
 ---
 
 ## New Designs
+<img src="/images/soldout.svg" class = "inline-icon-lg">
 
-<br>
 <div class="disclaimer">(Click to enlarge photos)</div>
 <ul class="rig columns-2">
   <li>

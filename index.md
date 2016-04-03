@@ -1,44 +1,26 @@
 ---
 layout: default-black
-title: Hardik Pandya
+title: Shachi Pandya
 ---
 
 <div class="bannered">
 <div class="bio">
 <h3 class="main-text">
-  <img src="/images/main.png" class = "title-image"/>
+  <img src="/images/head.png" class = "title-image"/>
 </h3>
 <!--<h3 class="main-text-subtitle" style=""><span style="color: #556B87;">Co</span>founder @ <a href="http://theoctal.com">Octal Consulting</a>.</h3>-->
 <h3 class="main-text">
   Shachi Pandya
 </h3>
 <div><h3 class="main-text-subtitle">
-  Award-winning Traditional Indian Wear and Western Wear Designer
+  Award-winning Ethnic & Western Wear Designer
 </h3></div>
-<div id="rotated-roles"><p style="text-align: center; font-weight: normal !important;
-  letter-spacing: 0.05em !important;
-  font-size: 1.05rem !important;
-  color: #fff !important;">
-  Designer Kurtis
-</p></div>
+<br />
+<img src="/images/dingbat-big.svg" class="img-sm" alt="">
+<p style="color: rgba(255,255,255,0.5); font-size: 0.7rem;">
+  Designer Kurtis <img src="/images/dingbat.svg" class="inline-icon-sm" alt=""> Chaniya Choli <img src="/images/dingbat.svg" class="inline-icon-sm" alt=""> Sarees <img src="/images/dingbat.svg" class="inline-icon-sm" alt=""> Designer Blouses
+</p>
 
-<center><a href="{{ site.url }}/chaniya-choli" class = "collections-button">See Collection</a></center>
+<center><a href="{{ site.url }}/chaniya-choli" class = "collections-button">See Whole Collection</a></center>
 
-
-<!--<h3 class="main-text-subtitle-love2" style="">I craft front-end layouts and interfaces for web-applications and hardware/software interactive automation products. I design automation software for niché industrial applications.</h3>-->
-
-<!--<h2 class="main-text-subtext" style=""><span class="amp">&amp;</span></h2>
-<h3 class="main-text-subtext" style="">Made</h3>
-<div class="octal-work"><span class="octal"><a href="http://eventviva.com">EventViva</a> &middot; <a href="http://livenote.org">Livenote</a> &middot; <a href="http://octalbonejs.com">Octalbonescript</a></span></div>
--->
-
-<div class="social-links">
-<span class="twitter-link" ><a id ="link-twitter" href="http://twitter.com/hvpandya"><span class="entypo-social twitter"></span></a>
-</span>
-<!--<span class="twitter-link"><a href="http://telegram.me/hardik"><img class="telegram" src = '/images/telegram.svg'/></a>
-</span>-->
-
-
-</div>
-</div>
-</div>
+</div> </div> </div>
