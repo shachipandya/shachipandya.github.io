@@ -8,7 +8,7 @@ latest: true
 
 SummerX is my latest work - it's what I've been busy with for the last 4 months. These 10 designs are perfect for various occasions throughout the summer.
 
-Now for sale with free shipping - Contact - 9998650102.
+Now for sale with free shipping - Contact - <b style="color: #fefefe;">9998650102</b>.
 
 <!-- <div class="disclaimer">(Click each set to see more photos)</div> -->
 
