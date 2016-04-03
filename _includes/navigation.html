@@ -4,6 +4,9 @@
     <li>
       <a href="/">Home</a>
     </li>
+    <li {% if page.latest %}class="current"{% endif %}>
+      <a href="{{ site.url }}/latest/">Latest</a>
+    </li>
     <li {% if page.chaniyacholi %}class="current"{% endif %}>
       <a href="{{ site.url }}/chaniya-choli/">Chaniya Choli</a>
     </li>

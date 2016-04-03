@@ -13,14 +13,13 @@ title: Shachi Pandya
   Shachi Pandya
 </h3>
 <div><h3 class="main-text-subtitle">
-  Award-winning Ethnic & Western-wear Designer
-</h3></div>
+  Award-winning Ethnic & Western-wear Designer</h3>
+  <h3 class="main-text-subtitle">Designer Kurtis <img src="/images/dingbat.svg" class="inline-icon-sm" alt=""> Chaniya Choli <img src="/images/dingbat.svg" class="inline-icon-sm" alt=""> Sarees <img src="/images/dingbat.svg" class="inline-icon-sm" alt=""> Designer Blouses
+</h3>
+</div>
 <br />
-<img src="/images/dingbat-big.svg" class="img-sm" alt="">
-<p style="color: rgba(255,255,255,0.5); font-size: 0.85rem;">
-  Designer Kurtis <img src="/images/dingbat.svg" class="inline-icon-sm" alt=""> Chaniya Choli <img src="/images/dingbat.svg" class="inline-icon-sm" alt=""> Sarees <img src="/images/dingbat.svg" class="inline-icon-sm" alt=""> Designer Blouses
-</p>
+<img src="/images/dings.svg" class="img-sm" alt="">
 
-<center><a href="{{ site.url }}/chaniya-choli" class = "collections-button">See Whole Collection</a></center>
+<center><a href="{{ site.url }}/latest" class = "collections-button">See SummerX 2016 Collection</a></center>
 
 </div> </div> </div>
