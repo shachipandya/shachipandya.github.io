@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Collection-2
-collectionTwo: true
+title: Ethnic
+ethnic: true
 ---
 
 ## New Designs
@@ -11,36 +11,17 @@ collectionTwo: true
 <ul class="rig columns-2">
   <li>
     <figure>
-      <a href="{{ site.url }}/images/collection-2/1.jpg"
+      <a href="{{ site.url }}/images/ethnic/1.jpg"
       class="fresco" data-fresco-group="one"
-      data-fresco-caption=""><img src="{{ site.url }}/images/collection-2/1.jpg"></a>
+      data-fresco-caption=""><img src="{{ site.url }}/images/ethnic/1.jpg"></a>
       <figcaption></figcaption>
     </figure>
   </li>
   <li>
     <figure>
-      <a href="{{ site.url }}/images/collection-2/2.jpg"
+      <a href="{{ site.url }}/images/ethnic/2.jpg"
       class="fresco" data-fresco-group="one"
-      data-fresco-caption=""><img src="{{ site.url }}/images/collection-2/2.jpg"></a>
-      <figcaption></figcaption>
-    </figure>
-  </li>
-</ul>
-
-<ul class="rig columns-2">
-  <li>
-    <figure>
-      <a href="{{ site.url }}/images/collection-2/3.jpg"
-      class="fresco" data-fresco-group="one"
-      data-fresco-caption=""><img src="{{ site.url }}/images/collection-2/3.jpg"></a>
-      <figcaption></figcaption>
-    </figure>
-  </li>
-  <li>
-    <figure>
-      <a href="{{ site.url }}/images/collection-2/4.jpg"
-      class="fresco" data-fresco-group="one"
-      data-fresco-caption=""><img src="{{ site.url }}/images/collection-2/4.jpg"></a>
+      data-fresco-caption=""><img src="{{ site.url }}/images/ethnic/2.jpg"></a>
       <figcaption></figcaption>
     </figure>
   </li>
@@ -49,36 +30,17 @@ collectionTwo: true
 <ul class="rig columns-2">
   <li>
     <figure>
-      <a href="{{ site.url }}/images/collection-2/5a.jpg"
+      <a href="{{ site.url }}/images/ethnic/3.jpg"
       class="fresco" data-fresco-group="one"
-      data-fresco-caption=""><img src="{{ site.url }}/images/collection-2/5a.jpg"></a>
+      data-fresco-caption=""><img src="{{ site.url }}/images/ethnic/3.jpg"></a>
       <figcaption></figcaption>
     </figure>
   </li>
   <li>
     <figure>
-      <a href="{{ site.url }}/images/collection-2/5b.jpg"
+      <a href="{{ site.url }}/images/ethnic/4.jpg"
       class="fresco" data-fresco-group="one"
-      data-fresco-caption=""><img src="{{ site.url }}/images/collection-2/5b.jpg"></a>
-      <figcaption></figcaption>
-    </figure>
-  </li>
-</ul>
-
-<ul class="rig columns-2">
-  <li>
-    <figure>
-      <a href="{{ site.url }}/images/collection-2/6.jpg"
-      class="fresco" data-fresco-group="one"
-      data-fresco-caption=""><img src="{{ site.url }}/images/collection-2/6.jpg"></a>
-      <figcaption></figcaption>
-    </figure>
-  </li>
-  <li>
-    <figure>
-      <a href="{{ site.url }}/images/collection-2/7.jpg"
-      class="fresco" data-fresco-group="one"
-      data-fresco-caption=""><img src="{{ site.url }}/images/collection-2/7.jpg"></a>
+      data-fresco-caption=""><img src="{{ site.url }}/images/ethnic/4.jpg"></a>
       <figcaption></figcaption>
     </figure>
   </li>
@@ -87,36 +49,17 @@ collectionTwo: true
 <ul class="rig columns-2">
   <li>
     <figure>
-      <a href="{{ site.url }}/images/collection-2/8.jpg"
+      <a href="{{ site.url }}/images/ethnic/5a.jpg"
       class="fresco" data-fresco-group="one"
-      data-fresco-caption=""><img src="{{ site.url }}/images/collection-2/8.jpg"></a>
+      data-fresco-caption=""><img src="{{ site.url }}/images/ethnic/5a.jpg"></a>
       <figcaption></figcaption>
     </figure>
   </li>
   <li>
     <figure>
-      <a href="{{ site.url }}/images/collection-2/9.jpg"
+      <a href="{{ site.url }}/images/ethnic/5b.jpg"
       class="fresco" data-fresco-group="one"
-      data-fresco-caption=""><img src="{{ site.url }}/images/collection-2/9.jpg"></a>
-      <figcaption></figcaption>
-    </figure>
-  </li>
-</ul>
-
-<ul class="rig columns-2">
-  <li>
-    <figure>
-      <a href="{{ site.url }}/images/collection-2/10.jpg"
-      class="fresco" data-fresco-group="one"
-      data-fresco-caption=""><img src="{{ site.url }}/images/collection-2/10.jpg"></a>
-      <figcaption></figcaption>
-    </figure>
-  </li>
-  <li>
-    <figure>
-      <a href="{{ site.url }}/images/collection-2/11.jpg"
-      class="fresco" data-fresco-group="one"
-      data-fresco-caption=""><img src="{{ site.url }}/images/collection-2/11.jpg"></a>
+      data-fresco-caption=""><img src="{{ site.url }}/images/ethnic/5b.jpg"></a>
       <figcaption></figcaption>
     </figure>
   </li>
@@ -125,17 +68,17 @@ collectionTwo: true
 <ul class="rig columns-2">
   <li>
     <figure>
-      <a href="{{ site.url }}/images/collection-2/12.jpg"
+      <a href="{{ site.url }}/images/ethnic/6.jpg"
       class="fresco" data-fresco-group="one"
-      data-fresco-caption=""><img src="{{ site.url }}/images/collection-2/12.jpg"></a>
+      data-fresco-caption=""><img src="{{ site.url }}/images/ethnic/6.jpg"></a>
       <figcaption></figcaption>
     </figure>
   </li>
   <li>
     <figure>
-      <a href="{{ site.url }}/images/collection-2/13.jpg"
+      <a href="{{ site.url }}/images/ethnic/7.jpg"
       class="fresco" data-fresco-group="one"
-      data-fresco-caption=""><img src="{{ site.url }}/images/collection-2/13.jpg"></a>
+      data-fresco-caption=""><img src="{{ site.url }}/images/ethnic/7.jpg"></a>
       <figcaption></figcaption>
     </figure>
   </li>
@@ -144,9 +87,66 @@ collectionTwo: true
 <ul class="rig columns-2">
   <li>
     <figure>
-      <a href="{{ site.url }}/images/collection-2/14.jpg"
+      <a href="{{ site.url }}/images/ethnic/8.jpg"
       class="fresco" data-fresco-group="one"
-      data-fresco-caption=""><img src="{{ site.url }}/images/collection-2/14.jpg"></a>
+      data-fresco-caption=""><img src="{{ site.url }}/images/ethnic/8.jpg"></a>
+      <figcaption></figcaption>
+    </figure>
+  </li>
+  <li>
+    <figure>
+      <a href="{{ site.url }}/images/ethnic/9.jpg"
+      class="fresco" data-fresco-group="one"
+      data-fresco-caption=""><img src="{{ site.url }}/images/ethnic/9.jpg"></a>
+      <figcaption></figcaption>
+    </figure>
+  </li>
+</ul>
+
+<ul class="rig columns-2">
+  <li>
+    <figure>
+      <a href="{{ site.url }}/images/ethnic/10.jpg"
+      class="fresco" data-fresco-group="one"
+      data-fresco-caption=""><img src="{{ site.url }}/images/ethnic/10.jpg"></a>
+      <figcaption></figcaption>
+    </figure>
+  </li>
+  <li>
+    <figure>
+      <a href="{{ site.url }}/images/ethnic/11.jpg"
+      class="fresco" data-fresco-group="one"
+      data-fresco-caption=""><img src="{{ site.url }}/images/ethnic/11.jpg"></a>
+      <figcaption></figcaption>
+    </figure>
+  </li>
+</ul>
+
+<ul class="rig columns-2">
+  <li>
+    <figure>
+      <a href="{{ site.url }}/images/ethnic/12.jpg"
+      class="fresco" data-fresco-group="one"
+      data-fresco-caption=""><img src="{{ site.url }}/images/ethnic/12.jpg"></a>
+      <figcaption></figcaption>
+    </figure>
+  </li>
+  <li>
+    <figure>
+      <a href="{{ site.url }}/images/ethnic/13.jpg"
+      class="fresco" data-fresco-group="one"
+      data-fresco-caption=""><img src="{{ site.url }}/images/ethnic/13.jpg"></a>
+      <figcaption></figcaption>
+    </figure>
+  </li>
+</ul>
+
+<ul class="rig columns-2">
+  <li>
+    <figure>
+      <a href="{{ site.url }}/images/ethnic/14.jpg"
+      class="fresco" data-fresco-group="one"
+      data-fresco-caption=""><img src="{{ site.url }}/images/ethnic/14.jpg"></a>
       <figcaption></figcaption>
     </figure>
   </li>

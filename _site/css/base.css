@@ -1,13 +1,13 @@
-/*
+
 @font-face {
-  font-family: 'Circular';
-  src: url("/assets/fonts/CircularDisplayPro-Regular.otf");
+  font-family: 'Neris';
+  src: url("/assets/fonts/Neris.otf");
 }
 @font-face {
   font-weight: bold;
-  font-family: 'Circular';
-  src: url("/assets/fonts/CircularDisplayPro-Medium.otf");
-}*/
+  font-family: 'Neris';
+  src: url("/assets/fonts/Eimantas Paškonis - Neris SemiBold.otf");
+}
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -15,7 +15,7 @@
 }
 html {
   word-wrap: break-word;
-  font-family: "Circular", "Circular Nova", Georgia, Helvetica, Arial, Geneva, sans-serif;
+  font-family: "Neris", "Neris Nova", Georgia, Helvetica, Arial, Geneva, sans-serif;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
 }
@@ -41,13 +41,13 @@ h5 {
   border-top: 1px solid #eee;
   color: #999;
   font-size: .8rem;
-  font-family: "Circular", "Georgia", Helvetica, sans-serif;
+  font-family: "Neris", "Georgia", Helvetica, sans-serif;
 }
 .inline-icon-sm {
   display: inline-block;
   margin: -4px 8px 0 8px;
   width: 8px !important;
-  opacity: 0.5;
+  opacity: 0.2;
 }
 .inline-icon-lg {
   display: inline-block;
@@ -76,7 +76,7 @@ h5 {
   text-align: center;
   text-decoration: none !important;
   font-size: 85%;
-  font-family: "Circular", "Circular", Helvetica, sans-serif;
+  font-family: "Neris", "Neris", Helvetica, sans-serif;
 }
 .download-button:hover {
   background-color: #275AB0;
@@ -144,7 +144,7 @@ footer, footer a {
   text-align: center;
   font-weight: normal;
   font-size: .8rem;
-  font-family: "Circular", Helvetica, Verdana, sans-serif;
+  font-family: "Neris", Helvetica, Verdana, sans-serif;
   line-height: 1.15rem;
 }
 footer .container {
@@ -177,7 +177,7 @@ nav.hidden {
 }
 nav li {
   display: inline-block;
-  padding: 0 .375rem 0 .375rem;
+  padding: 0 .5rem 0 .5rem;
   list-style: none;
 }
 .octal {
@@ -187,7 +187,7 @@ nav li {
   /*letter-spacing: .25rem;*/
   font-weight: normal;
   font-size: .8rem;
-  font-family: "Circular", "Georgia", sans-serif;
+  font-family: "Neris", "Georgia", sans-serif;
 }
 .octal-work {
   margin-bottom: 1.5rem;
@@ -207,8 +207,8 @@ nav li a {
   text-transform: uppercase;
   letter-spacing: .1rem!important;
   font-weight: normal;
-  font-size: .7rem!important;
-  font-family: "Circular", "Georgia", Georgia, Helvetica, Verdana, sans-serif;
+  font-size: 0.65rem!important;
+  font-family: "Neris", "Georgia", Georgia, Helvetica, Verdana, sans-serif;
   -moz-transition: color 0.3s ease;
   -ms-transition: color 0.3s ease;
   -webkit-transition: color 0.3s ease;
@@ -241,7 +241,7 @@ nav li a:hover {
   text-align: center;
   font-weight: normal;
   font-size: 1.1em !important;
-  font-family: "Circular", "Georgia", Georgia, Lucida, sans-serif;
+  font-family: "Neris", "Georgia", Georgia, Lucida, sans-serif;
 }
 .aside:before {
   margin-left: -2rem;
@@ -263,7 +263,7 @@ nav li a:hover {
   text-align: center;
   font-weight: normal;
   font-size: 97%!important;
-  font-family: "Circular", "Georgia", Georgia, Lucida, sans-serif;
+  font-family: "Neris", "Georgia", Georgia, Lucida, sans-serif;
   line-height: 1.5;
 }
 .plaque-left {
@@ -277,7 +277,7 @@ nav li a:hover {
   text-align: left;
   font-weight: normal;
   font-size: 110%!important;
-  font-family: "Circular", "Georgia", Georgia, Lucida, sans-serif;
+  font-family: "Neris", "Georgia", Georgia, Lucida, sans-serif;
   line-height: 1.5;
 }
 .disclaimer {
@@ -311,7 +311,7 @@ h1, h2, h3, h4 {
   text-align: center;
   /*letter-spacing: 0.01em;*/
   font-weight: normal !important;
-  font-family: "Circular", "Georgia", Georgia, Verdana, Helvetica, sans-serif;
+  font-family: "Neris", "Georgia", Georgia, Verdana, Helvetica, sans-serif;
 }
 h1 {
   margin-top: 1.5rem;
@@ -337,10 +337,10 @@ h1 {
   text-transform: none!important;
   font-weight: normal !important;
   font-size: 1.6rem;
-  font-family: "Circular", "Georgia", Georgia, Verdana, sans-serif;
+  font-family: "Neris", "Georgia", Georgia, Verdana, sans-serif;
 }
 .collections-button {
-    padding: 12px 45px;
+    padding: 12px 45px 16px 45px;
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
     border-radius: 4px;
@@ -352,7 +352,7 @@ h1 {
     /* letter-spacing: 0.09em !important; */
     font-weight: normal !important;
     /* font-size: 115% !important; */
-    font-family: "Circular", Helvetica, sans-serif;
+    font-family: "Neris", Helvetica, sans-serif;
 }
 .collections-button:hover {
   background-color: #D83470;
@@ -366,7 +366,7 @@ h1 {
   text-transform: none!important;
   font-weight: normal!important;
   font-size: 0.9rem;
-  font-family: "Circular", Georgia, Verdana, sans-serif;
+  font-family: "Neris", Georgia, Verdana, sans-serif;
 }
 .bannered {
   display: block;
@@ -375,7 +375,7 @@ h1 {
 }
 .list-of-articles {
   font-weight: bold!important;
-  font-family: "Circular", "Georgia", Helvetica, sans-serif;
+  font-family: "Neris", "Georgia", Helvetica, sans-serif;
 }
 h5.article-subtitle {
   margin-top: -1.3rem!important;
@@ -385,7 +385,7 @@ h5.article-subtitle {
   font-weight: normal!important;
   font-style: none;
   font-size: 1.34rem;
-  font-family: "Circular", "Georgia", Georgia, sans-serif;
+  font-family: "Neris", "Georgia", Georgia, sans-serif;
   line-height: 1.9rem;
 }
 h1.article-title {
@@ -395,7 +395,7 @@ h1.article-title {
   color: #333;
   font-weight: bold!important;
   font-size: 2.3rem;
-  font-family: "Circular", "Georgia", Georgia, sans-serif;
+  font-family: "Neris", "Georgia", Georgia, sans-serif;
   line-height: 2.9rem;
 }
 h1.article-title a {
@@ -420,7 +420,7 @@ h1.article-title a {
   text-align: left;
   font-weight: normal;
   font-size: .9rem;
-  font-family: "Circular", Helvetica, sans-serif;
+  font-family: "Neris", Helvetica, sans-serif;
 }
 h2 {
   margin-top: 2.4rem;
@@ -468,7 +468,7 @@ h4 a:hover {
   color: #dadada!important;
   font-weight: bold!important;
   font-size: 1.15rem!important;
-  font-family: "Circular", "Georgia", Helvetica, sans-serif;
+  font-family: "Neris", "Georgia", Helvetica, sans-serif;
 }
 p {
   margin: 0 0 1.25rem 0;
@@ -500,7 +500,7 @@ blockquote {
   font-weight: normal;
   font-style: italic!important;
   font-size: .92em;
-  font-family: "Circular", "Georgia", Helvetica, Verdana, sans-serif;
+  font-family: "Neris", "Georgia", Helvetica, Verdana, sans-serif;
 }
 figcaption {
   margin-bottom: 2rem;
@@ -509,7 +509,7 @@ figcaption {
   text-align: center;
   font-weight: bold;
   font-size: .8rem;
-  font-family: "Circular", Helvetica, Verdana, sans-serif;
+  font-family: "Neris", Helvetica, Verdana, sans-serif;
   line-height: 1.3;
 }
 center {
@@ -595,7 +595,7 @@ code {
   background: #eceff4;
   color: #222;
   font-size: 16px;
-  font-family: "Circular", "Georgia", Georgia, Helvetica, sans-serif;
+  font-family: "Neris", "Georgia", Georgia, Helvetica, sans-serif;
   line-height: 1.45;
 }
 .note {
@@ -887,7 +887,7 @@ code {
   color: #333;
   font-weight: bold!important;
   font-size: 1.3rem!important;
-  font-family: "Circular", "Georgia", Georgia, Helvetica, sans-serif;
+  font-family: "Neris", "Georgia", Georgia, Helvetica, sans-serif;
   -moz-transition: color 0.3s ease;
   -ms-transition: color 0.3s ease;
   -webkit-transition: color 0.3s ease;
@@ -1250,7 +1250,7 @@ ul.rig.columns-5 li {
   }
   body {
     width: 92%;
-    font-size: 108%;
+    font-size: 96%;
   }
   .box {
     margin-right: 0rem;
