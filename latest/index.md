@@ -6,7 +6,9 @@ latest: true
 
 ## SummerX 2016
 
-My designs vary from client to client according to their requirements. I like to pronounce contemporary Indian culture in my apparels. That's the reason my designs stand out from any others you see.
+SummerX is my latest work - it's what I've been busy with for the last 4 months. These 10 designs are perfect for various occasions throughout the summer.
+
+Now for sale with free shipping - Contact - 9998650102.
 
 <div class="disclaimer">(Click each set to see more photos)</div>
 
