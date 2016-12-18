@@ -1220,17 +1220,22 @@ ul.rig figcaption {
   padding: 10px 14px 12px 12px;
   border-radius: 0px 3px 3px 0px;
 }
+.rainbow-saree {
+  font-size: 0.5rem;
+  letter-spacing: 0.1em;
+  opacity: 0.5;
+}
 ul.rig figcaption.visible {
   margin-bottom: 0rem!important;
   display: inline-block;
   color: #FFFFFF;
   font-weight: bold;
   font-size: .65rem;
-  top: -2.75rem;
+  top: -3.75rem;
   position: relative;
   text-align: left;
   left: 0rem;
-  background: rgba(25,53,100,0.75);
+  background: rgba(29, 32, 37, 0.85);
   width: auto;
   padding: 10px 14px 12px 12px;
   border-radius: 0px 3px 3px 0px;

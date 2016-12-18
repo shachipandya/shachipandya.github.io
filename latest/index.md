@@ -4,7 +4,7 @@ title: SummerX 2016
 latest: true
 ---
 
-## SummerX 2016
+## SummerX Apparel Collection 2016
 
 <img src="/images/sale.svg" class = "inline-icon-lg opaque">
 
@@ -81,7 +81,9 @@ data-fresco-caption=""><img src="{{ site.url }}/images/latest/pistachio/pistachi
 <figure>
 <a href="{{ site.url }}/images/latest/rainbow/rainbow-1.jpg"   class="fresco" data-fresco-group="one"
 data-fresco-caption=""><img src="{{ site.url }}/images/latest/rainbow/rainbow-1.jpg"></a>
-<figcaption class="visible">Rainbow</figcaption>
+<figcaption class="visible">Rainbow<br />
+<span class="rainbow-saree">Multicolour Saree</span> 
+</figcaption>
 </figure>
 </li>
 </ul>
